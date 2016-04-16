@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>泰森多边形应用实例 | SuperMap iDesktop Cross 8C</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。
+具体操作步骤为：
+
+在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。
+全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泰森多边形应用实例">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/index.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。
+具体操作步骤为：
+
+在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。
+全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后">
+<meta property="og:updated_time" content="2016-04-15T16:11:28.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="泰森多边形应用实例">
+<meta name="twitter:description" content="本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。
+具体操作步骤为：
+
+在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。
+全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后">
+  
+    <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/iDesktop-Cross/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/iDesktop-Cross/" id="logo">SuperMap iDesktop Cross 8C</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/">Home</a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qinlj.github.io/iDesktop-Cross"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ProximityAnalyst/ThiessenAnalyst_Example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" class="article-date">
+  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      泰森多边形应用实例
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。</p>
+<p>具体操作步骤为：</p>
+<ol>
+<li>在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。</li>
+<li>全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后的属性表数据集通过数据类型转换功能转换为点数据。</li>
+<li>新建一个地图窗口，将 Provinces_R数据集添加到新建的地图窗口中，开启图层编辑功能，选中图层中的所有面对象，通过“对象操作”选项卡中的“组合”功能将所有面对象组合为一个面对象。</li>
+<li>单击“分析”选项卡中“矢量分析”组中“邻近分析”下拉按钮，选择“泰森多边形”项，在打开的“构建泰森多边形”对话框，</li>
+<li>在对话框中设置源数据集为“气象站点”数据，并通过选择面方式来设置分析区域，选择Provinces_R中的组合面作为分析范围。</li>
+<li>勾选“在地图中展示”复选框，构建成功后的泰森多边形会自动添加到当前地图窗口中显示。</li>
+<li>对构建的泰森多边形面数据制作分段专题图，在专题图属性面板中设置表达式为“年降水量”字段，设置段数为15段，并重新设置段值，最终即可得到如下图所示的全国降水量分布图：</li>
+</ol>
+<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory">泰森多边形构建原理</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" data-id="cin1wj42z000blkkqu3abpc1j" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          距离计算原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/iDesktop-Cross/docs/SuperMap iDesktop Cross 8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">SuperMap iDesktop Cross 8C产品介绍</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/iDesktop-Cross/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/">距离计算</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/">泰森多边形</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/">距离计算应用实例</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 idesktop<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/iDesktop-Cross/" class="mobile-nav-link">Home</a>
+  
+    <a href="/iDesktop-Cross/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/iDesktop-Cross/fancybox/jquery.fancybox.css">
+  <script src="/iDesktop-Cross/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/iDesktop-Cross/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>缓冲区分析 | SuperMap iDesktop Cross 8C</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="缓冲区分析（Buffer）是对一组或一类地图要素（点、线或面）按设定的距离条件，围绕这组要素而形成具有一定范围的多边形实体，从而实现数据在二维空间扩展的信息分析方法。
+用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：
+关于缓冲区分析介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。
+生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缓冲区分析">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/buffer/Bufferanalyst/index.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="缓冲区分析（Buffer）是对一组或一类地图要素（点、线或面）按设定的距离条件，围绕这组要素而形成具有一定范围的多边形实体，从而实现数据在二维空间扩展的信息分析方法。
+用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：
+关于缓冲区分析介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。
+生">
+<meta property="og:updated_time" content="2016-04-15T12:39:07.069Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="缓冲区分析">
+<meta name="twitter:description" content="缓冲区分析（Buffer）是对一组或一类地图要素（点、线或面）按设定的距离条件，围绕这组要素而形成具有一定范围的多边形实体，从而实现数据在二维空间扩展的信息分析方法。
+用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：
+关于缓冲区分析介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。
+生">
+  
+    <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/iDesktop-Cross/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/iDesktop-Cross/" id="logo">SuperMap iDesktop Cross 8C</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/">Home</a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qinlj.github.io/iDesktop-Cross"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-buffer/Bufferanalyst" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/buffer/Bufferanalyst/" class="article-date">
+  <time datetime="2016-04-13T16:00:00.000Z" itemprop="datePublished">2016-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      缓冲区分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>缓冲区分析（Buffer）是对一组或一类地图要素（点、线或面）按设定的距离条件，围绕这组要素而形成具有一定范围的多边形实体，从而实现数据在二维空间扩展的信息分析方法。</p>
+<p>用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：</p>
+<h3 id="关于缓冲区分析"><a href="#关于缓冲区分析" class="headerlink" title="关于缓冲区分析"></a><a href="/iDesktop-Cross/2016/04/14/buffer/HowBufferWork">关于缓冲区分析</a></h3><p>介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。</p>
+<h3 id="生成单重缓冲区"><a href="#生成单重缓冲区" class="headerlink" title="生成单重缓冲区"></a><a href="/iDesktop-Cross/2016/04/14/buffer/SingleBuffer">生成单重缓冲区</a></h3><p>介绍生成单重缓冲区的操作步骤。</p>
+<h3 id="生成多重缓冲区"><a href="#生成多重缓冲区" class="headerlink" title="生成多重缓冲区"></a><a href="/iDesktop-Cross/2016/04/14/buffer/MutilBuffer">生成多重缓冲区</a></h3><p>介绍生成多重缓冲区的操作步骤。</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/buffer/Bufferanalyst/" data-id="cin1wj4260002lkkqzz7l08n4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/iDesktop-Cross/buffer/HowBufferWork/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          关于缓冲区分析
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/iDesktop-Cross/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/">距离计算</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/">泰森多边形</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/">距离计算应用实例</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 idesktop<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/iDesktop-Cross/" class="mobile-nav-link">Home</a>
+  
+    <a href="/iDesktop-Cross/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/iDesktop-Cross/fancybox/jquery.fancybox.css">
+  <script src="/iDesktop-Cross/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/iDesktop-Cross/js/script.js"></script>
+
+  </div>
+</body>
+</html>

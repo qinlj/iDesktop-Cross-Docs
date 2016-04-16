@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>缓冲区分析应用实例 | SuperMap iDesktop Cross 8C</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="主题：青岛某区域大型商场选址在城市中，如何为大型商场找到一个交通便利、停车方便、人员密集的商业地段是开发商最为关注的问题。因此，商场选址需对多方面因素进行分析，选出最适宜地址，获得最大的经济效益。本实例选址的目标和标准如下：
+
+保证商场在居民区100m范围内，便于居民步行能达到商场；
+离城市交通线路50m以内，保证商场的通达性；
+距停车场100m范围内，便于顾客停车；
+距离已存在商场500m范围外">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缓冲区分析应用实例">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example/index.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="主题：青岛某区域大型商场选址在城市中，如何为大型商场找到一个交通便利、停车方便、人员密集的商业地段是开发商最为关注的问题。因此，商场选址需对多方面因素进行分析，选出最适宜地址，获得最大的经济效益。本实例选址的目标和标准如下：
+
+保证商场在居民区100m范围内，便于居民步行能达到商场；
+离城市交通线路50m以内，保证商场的通达性；
+距停车场100m范围内，便于顾客停车；
+距离已存在商场500m范围外">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/img/BufferApplication1.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/img/BufferApplication2.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/img/BufferApplication3.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/img/BufferApplication4.png">
+<meta property="og:updated_time" content="2016-04-15T16:04:57.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="缓冲区分析应用实例">
+<meta name="twitter:description" content="主题：青岛某区域大型商场选址在城市中，如何为大型商场找到一个交通便利、停车方便、人员密集的商业地段是开发商最为关注的问题。因此，商场选址需对多方面因素进行分析，选出最适宜地址，获得最大的经济效益。本实例选址的目标和标准如下：
+
+保证商场在居民区100m范围内，便于居民步行能达到商场；
+离城市交通线路50m以内，保证商场的通达性；
+距停车场100m范围内，便于顾客停车；
+距离已存在商场500m范围外">
+<meta name="twitter:image" content="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/img/BufferApplication1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/iDesktop-Cross/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/iDesktop-Cross/" id="logo">SuperMap iDesktop Cross 8C</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/">Home</a>
+        
+          <a class="main-nav-link" href="/iDesktop-Cross/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qinlj.github.io/iDesktop-Cross"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ProximityAnalyst/BufferAnalyst_Example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example/" class="article-date">
+  <time datetime="2016-04-16T01:09:11.403Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      缓冲区分析应用实例
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="主题：青岛某区域大型商场选址"><a href="#主题：青岛某区域大型商场选址" class="headerlink" title="主题：青岛某区域大型商场选址"></a>主题：青岛某区域大型商场选址</h1><p>在城市中，如何为大型商场找到一个交通便利、停车方便、人员密集的商业地段是开发商最为关注的问题。因此，商场选址需对多方面因素进行分析，选出最适宜地址，获得最大的经济效益。本实例选址的目标和标准如下：</p>
+<ul>
+<li>保证商场在居民区100m范围内，便于居民步行能达到商场；</li>
+<li>离城市交通线路50m以内，保证商场的通达性；</li>
+<li>距停车场100m范围内，便于顾客停车；</li>
+<li>距离已存在商场500m范围外，减少竞争压力。</li>
+</ul>
+<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><ul>
+<li>主要居民区面数据集；</li>
+<li>主要交通道路线数据；</li>
+<li>停车场点数据集；</li>
+<li>已有大型商场点数据集。</li>
+</ul>
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ol>
+<li>以居民区数据为中心，建立距离为100m的缓冲区，如下图所示：<br><img src="/iDesktop-Cross/img/BufferApplication1.png" alt=""><br>图：居民区缓存区分析</li>
+</ol>
+<ol>
+<li>以主要交通道路为中心，建立50m的缓冲区，如下图所示：<br><img src="/iDesktop-Cross/img/BufferApplication2.png" alt=""><br>图：主要道路缓存区分析</li>
+</ol>
+<ol>
+<li>以停车场和已存在的大型商场点数据为中心，分别建立100m和500m缓冲区，得到结果如下图所示：<br><img src="/iDesktop-Cross/img/BufferApplication3.png" alt=""><br>图：停车场和已有商场缓存区分析</li>
+</ol>
+<ol>
+<li>将居民区缓冲区、道路缓冲区、停车场缓冲区进行叠加分析求交，再将求交的结果与已存在商场缓冲区做擦除，满足以上条件的区域即适合建大型商场，下图中的绿色区域适宜建造大型商场。<br><img src="/iDesktop-Cross/img/BufferApplication4.png" alt=""><br>图：适宜建造商城区域</li>
+</ol>
+<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory.htm">缓冲区分析原理</a></p>
+<p><a href="/iDesktop-Cross/buffer/SingleBuffer.htm">生成单重缓冲区</a></p>
+<p><a href="/iDesktop-Cross/buffer/MutilBuffer.htm">生成多重缓冲区</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example/" data-id="cin1wj42b0004lkkq4lmawcka" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/iDesktop-Cross/buffer/MutilBuffer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          生成多重缓冲区
+        
+      </div>
+    </a>
+  
+  
+    <a href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">邻近分析解决方案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/iDesktop-Cross/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/">距离计算</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/">泰森多边形</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/">距离计算应用实例</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 idesktop<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/iDesktop-Cross/" class="mobile-nav-link">Home</a>
+  
+    <a href="/iDesktop-Cross/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/iDesktop-Cross/fancybox/jquery.fancybox.css">
+  <script src="/iDesktop-Cross/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/iDesktop-Cross/js/script.js"></script>
+
+  </div>
+</body>
+</html>

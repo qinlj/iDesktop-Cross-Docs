@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://qinlj.github.io/iDesktop-Cross"></form>
@@ -63,6 +63,179 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-ProximityAnalyst/ThiessenAnalyst_Example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" class="article-date">
+  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/">泰森多边形应用实例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。</p>
+<p>具体操作步骤为：</p>
+<ol>
+<li>在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。</li>
+<li>全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后的属性表数据集通过数据类型转换功能转换为点数据。</li>
+<li>新建一个地图窗口，将 Provinces_R数据集添加到新建的地图窗口中，开启图层编辑功能，选中图层中的所有面对象，通过“对象操作”选项卡中的“组合”功能将所有面对象组合为一个面对象。</li>
+<li>单击“分析”选项卡中“矢量分析”组中“邻近分析”下拉按钮，选择“泰森多边形”项，在打开的“构建泰森多边形”对话框，</li>
+<li>在对话框中设置源数据集为“气象站点”数据，并通过选择面方式来设置分析区域，选择Provinces_R中的组合面作为分析范围。</li>
+<li>勾选“在地图中展示”复选框，构建成功后的泰森多边形会自动添加到当前地图窗口中显示。</li>
+<li>对构建的泰森多边形面数据制作分段专题图，在专题图属性面板中设置表达式为“年降水量”字段，设置段数为15段，并重新设置段值，最终即可得到如下图所示的全国降水量分布图：</li>
+</ol>
+<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory">泰森多边形构建原理</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" data-id="cin2gtrsk0008gslms29elqmi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ProximityAnalyst/DistanceMeasure_Theory" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/" class="article-date">
+  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/">距离计算原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>距离计算用于计算点对象到其它点、线、面对象之间的最短间距，即两个对象之间最接近的距离。分析结果输出到属性表中，属性表中分别记录了源对象和邻近对象的<br>ID 及两对象之间的距离。进行距离计算时的注意事项有以下几点：</p>
+<ul>
+<li>源数据集与邻近数据集坐标系必须是相同的坐标系，才可进行距离计算，计算结果的距离单位与数据集坐标系单位一致。</li>
+<li>当与源对象距离相等的邻近对象为多个时，结果属性表中会同时记录这几个邻近对象的ID和距离。</li>
+<li>当两个对象存在包含、叠置关系时，两对象之间的距离为零。</li>
+<li>若计算的对象有面对象，则以面对象的边界来计算距离，如果另一个对象在面对象内，则距离为零。</li>
+</ul>
+<h3 id="距离计算原则"><a href="#距离计算原则" class="headerlink" title="距离计算原则"></a>距离计算原则</h3><ol>
+<li><p><strong>两个点对象之间的距离是连接两点的直线</strong></p>
+<p>两点之间的距离即为两点之间的连线距离，若计算最近距离，则会计算分别源点到临近点的距离，将最近的一个或多个等距离的临近点输出为结果。</p>
+</li>
+</ol>
+<p><img src="/iDesktop-Cross/ProximityAnalyst/img/DistanceMeasure1.png" alt=""></p>
+<p>图1：点对象之间的距离</p>
+<ol>
+<li><p><strong>点对象到线对象的距离是点到线的垂线或最近的节点的距离</strong></p>
+<p>点和线段之间的最短距离是点到线段的垂线，如果无法在线段的两个端点之间画出垂线，那么点到最近端点的距离为最短距离。当折线有多条线段时，先确定与点距离最近的线段，并以下图3所示方式计算出点到线的距离。</p>
+</li>
+</ol>
+<p><img src="/iDesktop-Cross/img/DistanceMeasure2.png" alt=""></p>
+<ol>
+<li><p><strong>点对象到面对象的距离是点到面边界的垂线或最近的节点的距离</strong></p>
+<p>面对象是由由一系列线段围绕而成的一个封闭的区域，因此，计算点到面的距离首先要确定与点距离最近的线段，再使用上图3所示方法计算出点到线的距离，即点到面对象的距离。若点不在面对象范围内，则距离值为正；若点包含在面对象中，则距离为零。如下图所示：点2和点4到面的距离为零，点1和点3到面的距离为正值。</p>
+</li>
+</ol>
+<p><img src="/iDesktop-Cross/img/DistanceMeasure3.png" alt=""></p>
+<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure">距离计算</a><br><a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example">距离计算应用实例</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/" data-id="cin2gtrsd0003gslm5f97a004" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ProximityAnalyst/ProximityAnalyst" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/" class="article-date">
+  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/">邻近分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实际应用中，通常会遇到一些距离相关的问题，例如：</p>
+<ul>
+<li>离泥石流发生地最近的居民点？</li>
+<li>从国家体育场出发，2公里内最近的两家超市？</li>
+<li>某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？</li>
+<li>某条被污染的河流周围1000米内，有多少家食品加工厂？</li>
+<li>瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？</li>
+</ul>
+<p>以上的实际问题大部分与空间上地物的位置与距离相关，邻近分析提供了用于确定多个或两个要素类间邻近性的功能，邻近分析功能包括缓冲区分析、泰森多边形、距离计算、距离查询、空间查询等功能，这些分析功能可用于解决此类问题。</p>
+<h3 id="内容提要："><a href="#内容提要：" class="headerlink" title="内容提要："></a>内容提要：</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory">泰森多边形构建原理</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example">泰森多边形应用实例</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory">距离计算原理</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure">距离计算</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example">距离计算应用实例</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory">缓冲区分析原理</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example">缓冲区分析应用实例</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases">邻近分析解决方案</a></p>
+<p>用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：</p>
+<p><a href="/iDesktop-Cross/buffer/HowBufferWork">关于缓冲区分析</a></p>
+<p>介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。</p>
+<p><a href="/iDesktop-Cross/buffer/SingleBuffer">生成单重缓冲区</a></p>
+<p>介绍生成单重缓冲区的操作步骤。</p>
+<p><a href="/iDesktop-Cross/buffer/MutilBuffer">生成多重缓冲区</a></p>
+<p>介绍生成多重缓冲区的操作步骤。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/" data-id="cin2gtrse0004gslm9397p1au" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-ProximityAnalyst/DistanceMeasure" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -139,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/" data-id="cin1wj42o0008lkkq5asd4tkn" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/" data-id="cin2gtrsg0005gslmr66eizn0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,9 +322,9 @@
 
 
   
-    <article id="post-ProximityAnalyst/ThiessenPolygon_Theory" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ProximityAnalyst/Proximity_Cases" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/" class="article-date">
+    <a href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases/" class="article-date">
   <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
 </a>
     
@@ -163,7 +336,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases/">邻近分析解决方案</a>
     </h1>
   
 
@@ -171,87 +344,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="泰森多边形定义"><a href="#泰森多边形定义" class="headerlink" title="泰森多边形定义"></a>泰森多边形定义</h3><p>泰森多边形是荷兰气候学家 A.H.Thiessen<br>提出的一种根据离散分布的气象站的降雨量来计算平均降雨量的方法，即将所有相邻气象站连成三角形，作这些三角形各边的垂直平分线，于是每个气象站周围的若干垂直平分线便围成一个多边形。用这个多边形内所包含的一个唯一气象站的降雨强度来表示这个多边形区域内的降雨强度，并称这个多边形为泰森多边形。</p>
-<p>泰森多边形又称为 Voronoi<br>图，是由一组连接两邻点直线的垂直平分线组成的连续多边形组成。泰森多边形的特性为：</p>
-<ul>
-<li>每个泰森多边形内仅含有一个离散点数据；</li>
-<li>泰森多边形内的点到相应离散点的距离最近；</li>
-<li>位于泰森多边形边上的点到其两边的离散点的距离相等。</li>
-</ul>
-<h3 id="泰森多边形应用"><a href="#泰森多边形应用" class="headerlink" title="泰森多边形应用"></a>泰森多边形应用</h3><p>泰森多边形可用于定性分析、统计分析、邻近分析等，通过创建泰森多边形创建的多边形要素可对可用空间进行划分并将其分配给最近的点要素。泰森多边形有时会用于替代插值操作，以便将一组样本测量值概化到最接近他们的区域。使用泰森多边形可将取自一组气候测量仪的测量值概化到周围区域，还可为一组店铺快速建立服务区模型等。例如：</p>
-<ul>
-<li>可以用离散点的性质来描述泰森多边形区域的性质；</li>
-<li>可用离散点的数据来计算泰森多边形区域的数据；</li>
-<li>判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是 n 边形，则就与 n 个离散点相邻；</li>
-<li>当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。</li>
-</ul>
-<h3 id="泰森多边形创建步骤"><a href="#泰森多边形创建步骤" class="headerlink" title="泰森多边形创建步骤"></a>泰森多边形创建步骤</h3><p>建立泰森多边形算法的关键是对离散数据点合理地连成三角网，即构建 Delaunay<br>三角网，建立泰森多边形的步骤如下：</p>
-<ol>
-<li>对待建立泰森多边形的点数据进行由左向右，由上到下的扫描，如果某个点与前一个扫描点的距离小于给定的邻近容限值，那么分析时将忽略该点；</li>
-<li>将离散的点数据构建 Delaunay 三角网，并对离散的点和构建的三角形编号，记录每个三角形是由哪个离散点构成的，同时记录与每个离散点相邻的所有三角形编号；</li>
-<li>画出每个三角形边的中垂线，由这些中垂线构成泰森多边形的边，而中垂线的交点是相应的泰森多边形的顶点；</li>
-<li><p>用于建立泰森多边形的点将成为相应的泰森多边形的锚点。</p>
-<p><img src="/iDesktop-Cross/img/CreatThiessen.png" alt=""><br>图：构建泰森多边形步骤</p>
-</li>
+        <ol>
+<li>离泥石流发生地最近的居民点？</li>
 </ol>
-<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example">泰森多边形应用实例</a></p>
+<p><strong>可选方案：</strong>距离计算</p>
+<p><strong>数据集1：</strong>泥石流发生地（用面或者点数据表示均可，视具体比例尺来定）</p>
+<p><strong>数据集2：</strong>该区域居民点分布</p>
+<p><strong>结果：</strong>记录在属性表中。</p>
+<p>2. 从国家体育场出发，2公里内最近的两家超市？</p>
+<p><strong>可选方案：</strong>查找最近设施点或距离查询</p>
+<p><strong>（1）查找最近设施点</strong></p>
+<p><strong>查找最近设施点需要数据：</strong>国家体育场周围的道路图（线状）、奥运场馆分布图、超市分布图（点状）。</p>
+<p><strong>步骤及关键参数设置：</strong></p>
+<p>构建道路交通网络，用每条道路上的往返距离分别作为双向的阻力字段；</p>
+<p>在奥运场馆分布图中，直接选择或者用SQL查询找到国家体育场的位置，作为查找最近设施点的事件点；</p>
+<p>在超市分布图中，各超市的位置作为查找最近设施点的设施点。设施点数为2。</p>
+<p>从事件点到设施点开始查找。查找半径为2km。</p>
+<p><strong>（2）距离查询</strong></p>
+<p><strong>距离查询需要数据：</strong>奥运场馆分布图、超市分布图（点状）</p>
+<p><strong>步骤及关键参数设置：</strong></p>
+<p>在奥运场馆分布图中，直接选择或者用SQL查询找到国家体育场的位置；</p>
+<p>超市分布图设为目标图层，使用距离查询工具。查询距离为2km。</p>
+<p><strong>评：</strong>以上两种方案中，第一种更实用，因其考虑了实际的道路状况，而第二种是根据空间上的距离来查找的，空间上最近并不表示可达距离最短。</p>
+<p>3. 某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？</p>
+<p><strong>可选方案：</strong>多重缓冲区（假设信号强度是随着空间距离增大呈递减趋势）</p>
+<p><strong>多重缓冲区</strong></p>
+<p><strong>多重缓冲区所需数据：</strong>信号发射塔（点状）</p>
+<p><strong>步骤：</strong></p>
+<p>按照一定的距离间隔创建多重缓冲区，从强到弱各层缓冲区使用由深到浅的颜色来渲染。</p>
+<p>4. 某条被污染的河流周围1000米内，有多少家食品加工厂？</p>
+<p><strong>可选方案：</strong>带属性过滤的距离查询</p>
+<p><strong>距离查询所需数据：</strong>河流分布图（线状或面状）、工厂分布图（点状）</p>
+<p><strong>步骤及关键参数设置：</strong></p>
+<p>选中被污染的河流设为查询对象，目标图层为工厂；</p>
+<p>属性过滤条件：构造SQL表达式，选出所有食品加工厂；</p>
+<p>查询距离设为1000m。</p>
+<p>5.<br>瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？</p>
+<p><strong>可选方案：</strong>距离计算</p>
+<p><strong>数据集1：</strong>酒店分布图（点状）</p>
+<p><strong>数据集2：</strong>足球场馆分布图（点状）</p>
+<p><strong>结果：</strong>记录在属性表中，每一家酒店表示的记录中，都会存储一个最近的足球场馆以及距离。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/" data-id="cin1wj438000flkkqf6bpdc1i" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ProximityAnalyst/BufferTheory" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/" class="article-date">
-  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>缓冲区分析是根据指定的距离，在点、线、面几何对象周围建立一定宽度的区域的分析方法。缓冲区分析在<br>GIS<br>空间分析中经常用到，且往往结合叠加分析来共同解决实际问题。缓冲区分析在农业、城市规划、生态保护、防洪抗灾、军事、地质、环境等诸多领域都有应用。例如，在环境治理时，常在污染的河流周围划出一定宽度的范围表示受到污染的区域；又如扩建道路时，可根据道路扩宽宽度对道路创建缓冲区，然后将缓冲区图层与建筑图层叠加，通过叠加分析查找落入缓冲区而需要被拆除的建筑，等等。</p>
-<p>缓冲区分析是基于点、线、面对象进行分析的，支持对二维点、线、面、网络数据集进行缓冲区分析。其中，对网络数据集进行缓冲区分析时，是对其中的弧段作缓冲区。缓冲区的类型可以分析单重缓冲区和多重缓冲区。下面以简单缓冲区为例分别介绍点、线、面的缓冲区的实现方式：</p>
-<h1 id="点缓冲区"><a href="#点缓冲区" class="headerlink" title="点缓冲区"></a>点缓冲区</h1><p>点的缓冲区是以点对象为圆心，以给定的缓冲距离为半径生成的圆形区域。当缓冲距离足够大时，两个或多个点对象的缓冲区可能有重叠。选择合并缓冲区时，重叠部分将被合并，最终得到的缓冲区是一个复杂面对象。</p>
-<p><img src="/iDesktop-Cross/img/Buffer1.png" alt=""></p>
-<h1 id="线缓冲区"><a href="#线缓冲区" class="headerlink" title="线缓冲区"></a>线缓冲区</h1><p>线的缓冲区是沿线对象的法线方向，分别向线对象的两侧平移一定的距离而得到两条线，并与在线端点处形成的光滑曲线（或平头）接合形成的封闭区域。同样，当缓冲距离足够大时，两个或多个线对象的缓冲区可能有重叠。合并缓冲区的效果与点的合并缓冲区相同。</p>
-<p><img src="/iDesktop-Cross/img/Buffer2.png" alt=""></p>
-<p>当线数据的缓冲类型设置为平头缓冲时，线对象两侧的缓冲宽度可以不一致，从而生成左右不等缓冲区；也可以只在线对象的一侧创建单边缓冲区，如下图所示：</p>
-<p><img src="/iDesktop-Cross/img/Buffer3.png" alt=""></p>
-<h1 id="面缓冲区"><a href="#面缓冲区" class="headerlink" title="面缓冲区"></a>面缓冲区</h1><p>面的缓冲区生成方式与线的缓冲区类似，区别是面的缓冲区仅在面边界的一侧延展或收缩。当缓冲半径为正值时，缓冲区向面对象边界的外侧扩展；为负值时，向边界内收缩。同样，当缓冲距离足够大时，两个或多个线对象的缓冲区可能有重叠。也可以选择合并缓冲区，其效果与点的合并缓冲区相同。</p>
-<p><img src="/iDesktop-Cross/img/Buffer4.png" alt=""></p>
-<h1 id="多重缓冲区"><a href="#多重缓冲区" class="headerlink" title="多重缓冲区"></a>多重缓冲区</h1><p>多重缓冲区是指在几何对象的周围，根据给定的若干缓冲区半径，建立相应数据量的缓冲区。对于线对象，还可以建立单边多重缓冲区，如下图所示：</p>
-<p><img src="/iDesktop-Cross/img/Buffer5.png" alt=""></p>
-<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/buffer/SingleBuffer">生成单重缓冲区</a></p>
-<p><a href="/iDesktop-Cross/buffer/MutilBuffer">生成多重缓冲区</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example">缓冲区分析应用实例</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/BufferTheory/" data-id="cin1wj42g0005lkkqc7ra018w" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/Proximity_Cases/" data-id="cin2gtrsh0006gslmysqr6w1d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/" data-id="cin1wj436000elkkq1c6726o4" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/" data-id="cin2gtrsj0007gslmrqfl3vff" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/" data-id="cin1wj42m0007lkkq0q4bbswu" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/" data-id="cin2gtrsa0001gslm599a0sdl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,9 +524,9 @@
 
 
   
-    <article id="post-ProximityAnalyst/ProximityAnalyst" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ProximityAnalyst/BufferTheory" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/" class="article-date">
+    <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/" class="article-date">
   <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
 </a>
     
@@ -401,7 +538,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/">邻近分析</a>
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
     </h1>
   
 
@@ -409,36 +546,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在实际应用中，通常会遇到一些距离相关的问题，例如：</p>
-<ul>
-<li>离泥石流发生地最近的居民点？</li>
-<li>从国家体育场出发，2公里内最近的两家超市？</li>
-<li>某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？</li>
-<li>某条被污染的河流周围1000米内，有多少家食品加工厂？</li>
-<li>瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？</li>
-</ul>
-<p>以上的实际问题大部分与空间上地物的位置与距离相关，邻近分析提供了用于确定多个或两个要素类间邻近性的功能，邻近分析功能包括缓冲区分析、泰森多边形、距离计算、距离查询、空间查询等功能，这些分析功能可用于解决此类问题。</p>
-<h3 id="内容提要："><a href="#内容提要：" class="headerlink" title="内容提要："></a>内容提要：</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory">泰森多边形构建原理</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example">泰森多边形应用实例</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory">距离计算原理</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure">距离计算</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example">距离计算应用实例</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory">缓冲区分析原理</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example">缓冲区分析应用实例</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases">邻近分析解决方案</a></p>
-<p>用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：</p>
-<p><a href="/iDesktop-Cross/buffer/HowBufferWork">关于缓冲区分析</a></p>
-<p>介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。</p>
-<p><a href="/iDesktop-Cross/buffer/SingleBuffer">生成单重缓冲区</a></p>
-<p>介绍生成单重缓冲区的操作步骤。</p>
+        <p>缓冲区分析是根据指定的距离，在点、线、面几何对象周围建立一定宽度的区域的分析方法。缓冲区分析在<br>GIS<br>空间分析中经常用到，且往往结合叠加分析来共同解决实际问题。缓冲区分析在农业、城市规划、生态保护、防洪抗灾、军事、地质、环境等诸多领域都有应用。例如，在环境治理时，常在污染的河流周围划出一定宽度的范围表示受到污染的区域；又如扩建道路时，可根据道路扩宽宽度对道路创建缓冲区，然后将缓冲区图层与建筑图层叠加，通过叠加分析查找落入缓冲区而需要被拆除的建筑，等等。</p>
+<p>缓冲区分析是基于点、线、面对象进行分析的，支持对二维点、线、面、网络数据集进行缓冲区分析。其中，对网络数据集进行缓冲区分析时，是对其中的弧段作缓冲区。缓冲区的类型可以分析单重缓冲区和多重缓冲区。下面以简单缓冲区为例分别介绍点、线、面的缓冲区的实现方式：</p>
+<h1 id="点缓冲区"><a href="#点缓冲区" class="headerlink" title="点缓冲区"></a>点缓冲区</h1><p>点的缓冲区是以点对象为圆心，以给定的缓冲距离为半径生成的圆形区域。当缓冲距离足够大时，两个或多个点对象的缓冲区可能有重叠。选择合并缓冲区时，重叠部分将被合并，最终得到的缓冲区是一个复杂面对象。</p>
+<p><img src="/iDesktop-Cross/img/Buffer1.png" alt=""></p>
+<h1 id="线缓冲区"><a href="#线缓冲区" class="headerlink" title="线缓冲区"></a>线缓冲区</h1><p>线的缓冲区是沿线对象的法线方向，分别向线对象的两侧平移一定的距离而得到两条线，并与在线端点处形成的光滑曲线（或平头）接合形成的封闭区域。同样，当缓冲距离足够大时，两个或多个线对象的缓冲区可能有重叠。合并缓冲区的效果与点的合并缓冲区相同。</p>
+<p><img src="/iDesktop-Cross/img/Buffer2.png" alt=""></p>
+<p>当线数据的缓冲类型设置为平头缓冲时，线对象两侧的缓冲宽度可以不一致，从而生成左右不等缓冲区；也可以只在线对象的一侧创建单边缓冲区，如下图所示：</p>
+<p><img src="/iDesktop-Cross/img/Buffer3.png" alt=""></p>
+<h1 id="面缓冲区"><a href="#面缓冲区" class="headerlink" title="面缓冲区"></a>面缓冲区</h1><p>面的缓冲区生成方式与线的缓冲区类似，区别是面的缓冲区仅在面边界的一侧延展或收缩。当缓冲半径为正值时，缓冲区向面对象边界的外侧扩展；为负值时，向边界内收缩。同样，当缓冲距离足够大时，两个或多个线对象的缓冲区可能有重叠。也可以选择合并缓冲区，其效果与点的合并缓冲区相同。</p>
+<p><img src="/iDesktop-Cross/img/Buffer4.png" alt=""></p>
+<h1 id="多重缓冲区"><a href="#多重缓冲区" class="headerlink" title="多重缓冲区"></a>多重缓冲区</h1><p>多重缓冲区是指在几何对象的周围，根据给定的若干缓冲区半径，建立相应数据量的缓冲区。对于线对象，还可以建立单边多重缓冲区，如下图所示：</p>
+<p><img src="/iDesktop-Cross/img/Buffer5.png" alt=""></p>
+<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/buffer/SingleBuffer">生成单重缓冲区</a></p>
 <p><a href="/iDesktop-Cross/buffer/MutilBuffer">生成多重缓冲区</a></p>
-<p>介绍生成多重缓冲区的操作步骤。</p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/BufferAnalyst_Example">缓冲区分析应用实例</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/" data-id="cin1wj432000clkkqktjfn04q" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/BufferTheory/" data-id="cin2gtrsn0009gslmxfs60wq8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -448,9 +575,9 @@
 
 
   
-    <article id="post-ProximityAnalyst/DistanceMeasure_Theory" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ProximityAnalyst/ThiessenPolygon_Theory" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/" class="article-date">
+    <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/" class="article-date">
   <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
 </a>
     
@@ -462,7 +589,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/">距离计算原理</a>
+      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
     </h1>
   
 
@@ -470,87 +597,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>距离计算用于计算点对象到其它点、线、面对象之间的最短间距，即两个对象之间最接近的距离。分析结果输出到属性表中，属性表中分别记录了源对象和邻近对象的<br>ID 及两对象之间的距离。进行距离计算时的注意事项有以下几点：</p>
+        <h3 id="泰森多边形定义"><a href="#泰森多边形定义" class="headerlink" title="泰森多边形定义"></a>泰森多边形定义</h3><p>泰森多边形是荷兰气候学家 A.H.Thiessen<br>提出的一种根据离散分布的气象站的降雨量来计算平均降雨量的方法，即将所有相邻气象站连成三角形，作这些三角形各边的垂直平分线，于是每个气象站周围的若干垂直平分线便围成一个多边形。用这个多边形内所包含的一个唯一气象站的降雨强度来表示这个多边形区域内的降雨强度，并称这个多边形为泰森多边形。</p>
+<p>泰森多边形又称为 Voronoi<br>图，是由一组连接两邻点直线的垂直平分线组成的连续多边形组成。泰森多边形的特性为：</p>
 <ul>
-<li>源数据集与邻近数据集坐标系必须是相同的坐标系，才可进行距离计算，计算结果的距离单位与数据集坐标系单位一致。</li>
-<li>当与源对象距离相等的邻近对象为多个时，结果属性表中会同时记录这几个邻近对象的ID和距离。</li>
-<li>当两个对象存在包含、叠置关系时，两对象之间的距离为零。</li>
-<li>若计算的对象有面对象，则以面对象的边界来计算距离，如果另一个对象在面对象内，则距离为零。</li>
+<li>每个泰森多边形内仅含有一个离散点数据；</li>
+<li>泰森多边形内的点到相应离散点的距离最近；</li>
+<li>位于泰森多边形边上的点到其两边的离散点的距离相等。</li>
 </ul>
-<h3 id="距离计算原则"><a href="#距离计算原则" class="headerlink" title="距离计算原则"></a>距离计算原则</h3><ol>
-<li><p><strong>两个点对象之间的距离是连接两点的直线</strong></p>
-<p>两点之间的距离即为两点之间的连线距离，若计算最近距离，则会计算分别源点到临近点的距离，将最近的一个或多个等距离的临近点输出为结果。</p>
-</li>
-</ol>
-<p><img src="/iDesktop-Cross/ProximityAnalyst/img/DistanceMeasure1.png" alt=""></p>
-<p>图1：点对象之间的距离</p>
+<h3 id="泰森多边形应用"><a href="#泰森多边形应用" class="headerlink" title="泰森多边形应用"></a>泰森多边形应用</h3><p>泰森多边形可用于定性分析、统计分析、邻近分析等，通过创建泰森多边形创建的多边形要素可对可用空间进行划分并将其分配给最近的点要素。泰森多边形有时会用于替代插值操作，以便将一组样本测量值概化到最接近他们的区域。使用泰森多边形可将取自一组气候测量仪的测量值概化到周围区域，还可为一组店铺快速建立服务区模型等。例如：</p>
+<ul>
+<li>可以用离散点的性质来描述泰森多边形区域的性质；</li>
+<li>可用离散点的数据来计算泰森多边形区域的数据；</li>
+<li>判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是 n 边形，则就与 n 个离散点相邻；</li>
+<li>当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。</li>
+</ul>
+<h3 id="泰森多边形创建步骤"><a href="#泰森多边形创建步骤" class="headerlink" title="泰森多边形创建步骤"></a>泰森多边形创建步骤</h3><p>建立泰森多边形算法的关键是对离散数据点合理地连成三角网，即构建 Delaunay<br>三角网，建立泰森多边形的步骤如下：</p>
 <ol>
-<li><p><strong>点对象到线对象的距离是点到线的垂线或最近的节点的距离</strong></p>
-<p>点和线段之间的最短距离是点到线段的垂线，如果无法在线段的两个端点之间画出垂线，那么点到最近端点的距离为最短距离。当折线有多条线段时，先确定与点距离最近的线段，并以下图3所示方式计算出点到线的距离。</p>
+<li>对待建立泰森多边形的点数据进行由左向右，由上到下的扫描，如果某个点与前一个扫描点的距离小于给定的邻近容限值，那么分析时将忽略该点；</li>
+<li>将离散的点数据构建 Delaunay 三角网，并对离散的点和构建的三角形编号，记录每个三角形是由哪个离散点构成的，同时记录与每个离散点相邻的所有三角形编号；</li>
+<li>画出每个三角形边的中垂线，由这些中垂线构成泰森多边形的边，而中垂线的交点是相应的泰森多边形的顶点；</li>
+<li><p>用于建立泰森多边形的点将成为相应的泰森多边形的锚点。</p>
+<p><img src="/iDesktop-Cross/img/CreatThiessen.png" alt=""><br>图：构建泰森多边形步骤</p>
 </li>
-</ol>
-<p><img src="/iDesktop-Cross/img/DistanceMeasure2.png" alt=""></p>
-<ol>
-<li><p><strong>点对象到面对象的距离是点到面边界的垂线或最近的节点的距离</strong></p>
-<p>面对象是由由一系列线段围绕而成的一个封闭的区域，因此，计算点到面的距离首先要确定与点距离最近的线段，再使用上图3所示方法计算出点到线的距离，即点到面对象的距离。若点不在面对象范围内，则距离值为正；若点包含在面对象中，则距离为零。如下图所示：点2和点4到面的距离为零，点1和点3到面的距离为正值。</p>
-</li>
-</ol>
-<p><img src="/iDesktop-Cross/img/DistanceMeasure3.png" alt=""></p>
-<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure">距离计算</a><br><a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example">距离计算应用实例</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/" data-id="cin1wj42v0009lkkqqef23ytw" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ProximityAnalyst/ThiessenAnalyst_Example" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" class="article-date">
-  <time datetime="2016-04-16T01:09:11.413Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/">泰森多边形应用实例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本实例基于全国的气象站点数据，对其构建泰森多边形，将点数据中的属性反映到面对象的面对象中，得到每个气象站点构建区域的平均降雨量，对其制作分段专题图，分析各区域的降雨量情况。</p>
-<p>具体操作步骤为：</p>
-<ol>
-<li>在当前工作空间中，打开示范数据中的 China400.udb，并新建一个文件型数据源，命名为 Thiessen。</li>
-<li>全国气象站点观测数据为 Excel 数据，将其导入到 Thiessen 数据源中，并将导入后的属性表数据集通过数据类型转换功能转换为点数据。</li>
-<li>新建一个地图窗口，将 Provinces_R数据集添加到新建的地图窗口中，开启图层编辑功能，选中图层中的所有面对象，通过“对象操作”选项卡中的“组合”功能将所有面对象组合为一个面对象。</li>
-<li>单击“分析”选项卡中“矢量分析”组中“邻近分析”下拉按钮，选择“泰森多边形”项，在打开的“构建泰森多边形”对话框，</li>
-<li>在对话框中设置源数据集为“气象站点”数据，并通过选择面方式来设置分析区域，选择Provinces_R中的组合面作为分析范围。</li>
-<li>勾选“在地图中展示”复选框，构建成功后的泰森多边形会自动添加到当前地图窗口中显示。</li>
-<li>对构建的泰森多边形面数据制作分段专题图，在专题图属性面板中设置表达式为“年降水量”字段，设置段数为15段，并重新设置段值，最终即可得到如下图所示的全国降水量分布图：</li>
 </ol>
 <h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon">构建泰森多边形</a></p>
-<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory">泰森多边形构建原理</a></p>
+<p><a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example">泰森多边形应用实例</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/" data-id="cin1wj42z000blkkqu3abpc1j" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/" data-id="cin2gtrsq000agslmklxjj6cb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -560,9 +636,9 @@
 
 
   
-    <article id="post-docs/SuperMap iDesktop Cross 8C" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/iDesktop-Cross/docs/SuperMap iDesktop Cross 8C/" class="article-date">
+    <a href="/iDesktop-Cross/hello-world/" class="article-date">
   <time datetime="2016-04-16T01:09:11.403Z" itemprop="datePublished">2016-04-16</time>
 </a>
     
@@ -574,7 +650,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/docs/SuperMap iDesktop Cross 8C/">SuperMap iDesktop Cross 8C产品介绍</a>
+      <a class="article-title" href="/iDesktop-Cross/hello-world/">Hello World</a>
     </h1>
   
 
@@ -582,167 +658,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SuperMap iDesktop Cross 8C<br>是一款支持跨平台、全开源的桌面GIS应用与开发平台系统，可在Windows和Linux系统上运行，是国内首款可在Linux操作系统上运行的桌面GIS系统，实现了GIS数据在跨平台环境下的展示。SuperMap<br>iDesktop Cross<br>8C是一款跨平台、全开源、可扩展的桌面GIS产品，也是超图新一代的开源GIS桌面产品。</p>
-<p>SuperMap iDesktop Cross 8C是基于SuperMap iObjects Java<br>8C、Eclipse和OSGI等平台，通过Java语言开发的插件式、跨平台GIS<br>应用软件，提供了地图制图、数据管理、数据处理、数据分析等功能，同时提供了灵活的开发框架和辅助控件，便于用户二次开发。SuperMap<br>iDesktop Cross<br>8C的开源库地址为：<a href="http://git.oschina.net/supermap/SuperMap-iDesktop-Cross" target="_blank" rel="external"><em>http://git.oschina.net/supermap/SuperMap-iDesktop-Cross</em></a>。</p>
-<h1 id="产品简介"><a href="#产品简介" class="headerlink" title="产品简介"></a>产品简介</h1><p>SuperMap iDesktop Cross 8C 是一套运行在桌面端的专业GIS软件，<br>是基于SuperMap iObjects Java 8C、Eclipse和<br>OSGI开发的跨平台GIS应用软件。SuperMap iDesktop Cross<br>8C提供了适用于不同平台的版本，分为Windows和Linux两个版本，其中，Windows版本包括32位和64位两个，分别提供了绿色包和安装包，Linux版本提供了64位的绿色包。</p>
-<p>SuperMap iDesktop Cross 8C 是一款免许可的应用软件，只要有SuperMap<br>iObjects Java 8C 的许可，即可使用SuperMap iDesktop Cross<br>8C提供的相应模块的功能。</p>
-<h1 id="提供功能"><a href="#提供功能" class="headerlink" title="提供功能"></a>提供功能</h1><h3 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h3><p>提供了工作空间管理、数据源管理、数据集管理功能；支持文件型、数据库型、Web型数据引擎；提供对空间数据及其属性的全面操作和处理，包括创建、编辑、管理、访问等功能。</p>
-<ul>
-<li><p><strong>数据引擎</strong>：支持打开不同数据引擎，如Oracle、SQLPlus、DB2、DMPlus、KingBase、MySQL等数据库，其中，Linux版本不支持SQLPlus数据引擎；同时支持打开Web地图数据，即谷歌地图、百度地图、超图云服务、天地图服务、OGC服务、REST服务、OpenStreetMap等Web地图。</p>
-</li>
-<li><p><strong>工作空间管理</strong>：支持打开、保存、另存、关闭、删除工作空间，支持打开的工作空间有文件型、Oracle、SQLServer三种类型，Linux版本不支持打开SQL Server工作空间。</p>
-</li>
-<li><p><strong>数据源管理</strong>：支持打开文件型、数据库型、Web型数据源，同时支持新建文件型、数据库型和内存数据源。</p>
-</li>
-<li><p><strong>数据集管理</strong>：支持数据集进行新建、复制、关闭、删除等操作；</p>
-<p><img src="/iDesktop-Cross/img/Product1.png" alt=""><br>图 1‑1 打开Web型数据源</p>
-</li>
-</ul>
-<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><p>SuperMap iDesktop Cross<br>8C支持导入其他格式的数据，并将其他格式数据转为SuperMap可操作的数据格式，同时也可以将SuperMap格式的数据导出为其他数据格式。</p>
-<ul>
-<li><p><strong>数据导入</strong>：支持将其他格式的数据导入到应用程序中，包括多种矢量、栅格、模型数据格式，如*.dwg、*.e00、*.shp、*.gdb、*.mif、*.xlsx、*.tif、*.img、*.dem等。</p>
-</li>
-<li><p><strong>数据导出</strong>：支持将数据集导出为兼容其他软件的数据格式，可导出为以下格式的数据*.dwg、*.e00、*.shp、*.gdb、*.mif、*.xlsx、*.tif、*.img、*.sit、*.3ds、*.kml等。</p>
-</li>
-</ul>
-<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><p>数据处理是GIS的基础功能，SuperMap iDesktop Cross<br>8C目前提供的数据处理功能有：投影设置、数据编辑、数据融合、拓扑处理、追加行、追加列等。</p>
-<ul>
-<li><p><strong>投影设置</strong>：支持对矢量、栅格、模型等数据集进行投影转换。</p>
-</li>
-<li><p><strong>数据编辑</strong>：提供了丰富、全面的对象绘制和对象编辑功能，便于对数据进行编辑调整。</p>
-</li>
-<li><p><strong>空间索引</strong>：支持对矢量数据创建空间索引，对栅格数据创建影像金字塔，以提高数据的浏览效率。</p>
-</li>
-<li><p><strong>矢量数据处理</strong>：提供丰富的矢量数据处理功能，如：数据融合、拓扑检查、拓扑处理、SQL 查询、追加行、追加列、属性更新等。<br><img src="/iDesktop-Cross/img/Product3.png" alt=""><br>图 1‑2 拓扑处理</p>
-</li>
-</ul>
-<h3 id="地图制图"><a href="#地图制图" class="headerlink" title="地图制图"></a>地图制图</h3><p><strong>地图相关功能</strong>：提供地图显示、渲染、编辑等功能；提供了二三维点、线、面图层风格设置功能；支持制作及修改单值、分段、标签三种专题图。</p>
-<ul>
-<li><p><strong>地图选择</strong>：支持地图对象选择操作，支持点选和框选两种方式。</p>
-</li>
-<li><p><strong>地图浏览</strong>：支持在地图窗口中，通过漫游、放大、缩小、全副显示等操作来浏览地图。</p>
-</li>
-<li><p><strong>风格设置</strong>：提供了丰富的符号资源，支持设置二三维点、线、面图层风格，可设置点、线、面符号、颜色、透明度等属性，增强地图的美观性。</p>
-</li>
-<li><p><strong>地图编辑</strong>：提供了地图编辑功能，支持地图复制、粘贴、剪切、删除等操作。</p>
-</li>
-<li><p><strong>图层可见性</strong>：支持对图层设置可见比例尺，控制图层在不同比例尺下显示，提供地图的美观性和显示效率。</p>
-</li>
-<li><p><strong>制作专题图</strong>：支持矢量和栅格图层专题图的制作与修改，矢量图层支持单值、分段、标签三种专题图类型，栅格图层支持单值和分段两种专题图。<br><img src="/iDesktop-Cross/img/Product2.png" alt=""><br>图 1‑3 制作专题图</p>
-</li>
-</ul>
-<h3 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h3><p>数据分析模块提供了缓冲区分析功能，可根据指定的缓冲半径对点、线、面数据集进行缓冲区分析。</p>
-<h1 id="主要特色"><a href="#主要特色" class="headerlink" title="主要特色"></a>主要特色</h1><h3 id="跨平台、全开源、可定制"><a href="#跨平台、全开源、可定制" class="headerlink" title="跨平台、全开源、可定制"></a>跨平台、全开源、可定制</h3><ul>
-<li><p>基于Java组件采用Java语言开发，具有跨平台的特性，支持在Windows和Linux系统中运行。</p>
-</li>
-<li><p>采用稳健的Eclipse插件框架，实现了插件式桌面及源代码的开源。</p>
-</li>
-<li><p>遵循OSGI国际扩展标准，将应用程序分为多个模块单元，统一管理各模块单元及用户开发的模块单元之间的交叉依赖关系，实现GIS数据的展示。</p>
-</li>
-<li><p>界面采用Swing图形风格，界面支持跨平台，安全性高，易于界面定制和二次开发。</p>
-</li>
-</ul>
-<h3 id="稳定、易用、高效、美观"><a href="#稳定、易用、高效、美观" class="headerlink" title="稳定、易用、高效、美观"></a>稳定、易用、高效、美观</h3><ul>
-<li><p>基于Java语言，采用Eclipse框架，极大地提高了应用系统的通用性、高效性和稳定性。</p>
-</li>
-<li><p>使用Swing图形界面风格，利用Swing丰富、灵活的功能和模块化组件，来创建美观、易用的菜单和工具条界面。</p>
-</li>
-<li><p>“功能就在您手边”的设计理念，提供了丰富的右键菜单和鼠标动作的响应功能，提高了软件的易用性。“所见即所得”的呈现方式，用户的操作会实时地应用，保证用户在第一时间看到操作的工作成果，方便设计和修改。</p>
-</li>
-<li><p>模板化的应用，供了多种图层风格模板、地图模板、专题图模板等，用户可通过自己设计模板及系统提供的模板，提高工作成果的重用性和工作效率。</p>
-</li>
-</ul>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/docs/SuperMap iDesktop Cross 8C/" data-id="cin1wj43g000glkkqa43sjc2b" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-buffer/MutilBuffer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/iDesktop-Cross/buffer/MutilBuffer/" class="article-date">
-  <time datetime="2016-04-16T01:09:11.403Z" itemprop="datePublished">2016-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/iDesktop-Cross/buffer/MutilBuffer/">生成多重缓冲区</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>多重缓冲区是指在几何对象周围的指定距离内创建多个缓冲区。生成的缓冲区结果可以继续参与后面的分析操作。</p>
-<ul>
-<li>目前，应用程序不支持对 CAD 数据集和网络数据集生成多重缓冲区。</li>
-<li>对线数据生成多重缓冲区，可以选择圆头缓冲或平头缓冲两种缓冲类型；而对点/面数据系统默认只能生成圆头缓冲。</li>
-</ul>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>在“<strong>分析</strong>”选项卡上的“<strong>矢量分析</strong>”组中，单击“<strong>缓冲区</strong>”按钮，在弹出的下拉菜单中选择”多重缓冲区”项,弹出“生成多重缓冲区”对话框。</p>
-<p>  <img src="/iDesktop-Cross/img/MutilBufferDia.png" alt=""><br>  图：“生成多重缓冲区”对话框</p>
-<p>设置缓冲数据。</p>
-<p><strong>数据源：</strong>选择要生成多重缓冲区的数据集所在的数据源。</p>
-<p><strong>数据集：</strong>系统支持对点、线、面数据生成多重缓冲区，故“数据集”下拉列表中，显示出所选择数据源中的所有点、线、面数据集。此处，选择一个需要生成多重缓冲区的数据集。</p>
-<p><strong>只针对被选中对象进行缓冲操作：</strong>若在当前地图窗口中，已选中了点、线或面对象，“只针对被选中对象进行缓冲操作”复选框被勾选。勾选该项，表示只对选中的对象生成多重缓冲区，此时，不能设置生成多重缓冲区的数据源和数据集；取消勾选该项，表示对该数据集中的所有对象生成多重缓冲区，并且可以更改生成多重缓冲区的数据源和数据集。</p>
-<p>在对话框右侧的缓冲半径列表中，设置多重缓冲区的缓冲半径。</p>
-<p>可使用工具条中的批量添加、插入、删除等按钮进行缓冲半径的设置。在缓冲区半径列表中，从上到下依次排列的缓冲半径对应多重缓冲区的。缓冲区半径列表中，单击“半径”列中的数值，即可修改缓冲半径。</p>
-<p><strong>批量添加：</strong>单击工具条中的 <img src="/iDesktop-Cross/img/Add.png" alt=""><br>按钮，弹出“批量添加”对话框，可设置具有一定递增/递减规则的缓冲半径值，各级缓冲半径都是以缓冲对象为基准生成缓冲区。系统默认为创建10-30米的间隔为10米的缓冲区。已添加的缓冲半径值会依次显示在缓冲半径列表中。</p>
-<p>“批量添加”对话框说明</p>
-<ul>
-<li><strong>起始值：</strong>设置最内层缓冲区的半径值。</li>
-<li><strong>结束值：</strong>设置最外层缓冲区的半径值。</li>
-<li><strong>步长：</strong>设置各级缓冲区之间的间隔距离，即缓冲半径差。</li>
-<li><strong>段数：</strong>设置生成多重缓冲区的层级数。</li>
-<li><strong>自动更新结束值：</strong>勾选该复选框，则系统自动根据输入的起始值、步长和段数，计算生成的多重缓冲区中最外层缓冲区的半径值。若不勾选该复选框，则系统默认按照输入的结束值生成最外层缓冲区的半径值。</li>
-</ul>
-<p>单击“单位”标签右侧的下拉按钮，设置缓冲半径的单位。</p>
-<p>可供选择的缓冲半径单位包括：毫米、厘米、分米、米、千米、英寸、英尺、英里、度、码等。</p>
-<p>设置多重缓冲区的缓冲类型。</p>
-<p>若对线对象生成缓冲区，缓冲类型区域中的参数设置为可用状态，可设置对线对象生成多重缓冲区的类型。</p>
-<p><strong>圆头缓冲：</strong>生成多重缓冲区时，在线的两边按照缓冲距离绘制平行线，并在线的端点处以缓冲距离为半径绘制半圆，连接生成缓冲区域。默认缓冲类型为圆头缓冲。</p>
-<p><strong>平头缓冲：</strong>生成多重缓冲区时，以线对象的相邻节点间的线段为一个矩形边，以左半径或者右半径为矩形的另外一边，生成形状为矩形的缓冲区域。<br>线数据在生成平头缓冲时，可以生成单个方向的多重缓冲区。</p>
-<ul>
-<li><strong>左半径：</strong>基于缓冲半径在线数据的左边区域生成多重缓冲区。</li>
-<li><strong>右半径：</strong>基于缓冲半径在线数据的右边区域生成多重缓冲区。</li>
-</ul>
-<p>设置结果选项。</p>
-<p>在结果设置区域，设置生成的多重缓冲区是否合并、是否保留原对象字段属性、是否添加到当前地图窗口以及半圆弧线段数值大小等。</p>
-<p><strong>合并缓冲区：</strong>勾选该项，表示对缓冲半径相同的缓冲区进行合并运算。取消勾选该项，表示保留生成的缓冲区结果，不进行合并操作。如下图所示，对两个扇形（蓝色）生成多两重缓冲区。为了更直观的显示缓冲区效果（图1），对生成的结果按照缓冲半径制作专题图。将生成的结果移动，发现相同缓冲半径的缓冲区合并为一个复杂对象，图2为其中一组合并后的缓冲区。注意：在不勾选合并缓冲区的情况下，相同缓冲半径的缓冲区不会进行合并，为单独的两个简单对象。</p>
-<p><img src="/iDesktop-Cross/img/MulBuf1.png" alt=""></p>
-<p>图1：多重缓冲区结果</p>
-<p><img src="/iDesktop-Cross/img/MulBuf2.png" alt=""></p>
-<p>图2：一组合并的缓冲区</p>
-<p><strong>保留原对象字段属性：</strong>勾选该项，表示生成的每一个缓冲区会保留相应的原对象的非系统属性字段信息。取消勾选该项将会丢失原对象的非系统字段属性信息。默认为勾选该项。注意：当勾选“合并缓冲区”时，该项不可用。</p>
-<p><strong>生成环状缓冲区：</strong>勾选该项，表示生成多重缓冲区时外圈缓冲区是以环状区域与内圈数据相邻的。取消勾选该项后的外围缓冲区是一个包含了内圈数据的区域。默认为勾选该项。</p>
-<p><strong>在地图窗口中显示结果：</strong>勾选该项，表示生成多重缓冲区后，会将缓冲分析结果添加到当前地图窗口中。取消勾选该项，则不会自动将缓冲分析结果添加到当前地图窗口中。默认为勾选该项。</p>
-<p><strong>半圆弧线段数(4-200)：</strong>用于设置生成的缓冲区边界的平滑度。数值越大，圆弧/弧段均分数目越多，缓冲区边界越平滑。取值范围为4-200。默认的数值为100。</p>
-<p>设置结果数据。</p>
-<p><strong>数据源：</strong>选择生成的多重缓冲区结果要保存的数据源。</p>
-<p><strong>数据集：</strong>输入生成的多重缓冲区结果要保存的数据集名称。如果输入的数据集名称已经存在，则会提示数据集名称非法，需要重新输入。</p>
-<p>设置完以上参数后，单击“确定”按钮，执行生成多重缓冲区的操作。</p>
-<h3 id="相关主题"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题</h3><p><a href="/iDesktop-Cross/buffer/HowBufferWork">关于缓冲区分析</a></p>
-<p><a href="/iDesktop-Cross/buffer/SingleBuffer">生成单重缓冲区</a></p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/buffer/MutilBuffer/" data-id="cin1wj4290003lkkqi0taa4ya" class="article-share-link">Partager</a>
+      <a data-url="http://qinlj.github.io/iDesktop-Cross/iDesktop-Cross/hello-world/" data-id="cin2gtrri0000gslmpcctl7il" class="article-share-link">Share</a>
       
       
     </footer>
@@ -781,28 +710,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenAnalyst_Example/">泰森多边形应用实例</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure_Theory/">距离计算原理</a>
+          </li>
+        
+          <li>
+            <a href="/iDesktop-Cross/ProximityAnalyst/ProximityAnalyst/">邻近分析</a>
+          </li>
         
           <li>
             <a href="/iDesktop-Cross/ProximityAnalyst/DistanceMeasure/">距离计算</a>
           </li>
         
           <li>
-            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon_Theory/">泰森多边形构建原理</a>
-          </li>
-        
-          <li>
-            <a href="/iDesktop-Cross/ProximityAnalyst/BufferTheory/">缓冲区分析原理</a>
-          </li>
-        
-          <li>
-            <a href="/iDesktop-Cross/ProximityAnalyst/ThiessenPolygon/">泰森多边形</a>
-          </li>
-        
-          <li>
-            <a href="/iDesktop-Cross/ProximityAnalyst/DistanceAnalyst_Example/">距离计算应用实例</a>
+            <a href="/iDesktop-Cross/ProximityAnalyst/Proximity_Cases/">邻近分析解决方案</a>
           </li>
         
       </ul>
@@ -818,7 +747,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 idesktop<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>邻近分析 | SuperMap iDesktop Cross 8C</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ProximityAnalyst.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ProximityAnalyst.html">
+    
+      <link rel="alternative" hreflang="zh-tw" href="http://qinlj.github.io/iDesktop-Cross/zh-tw/docs/ProximityAnalyst/ProximityAnalyst.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://qinlj.github.io/iDesktop-Cross/zh-cn/docs/ProximityAnalyst/ProximityAnalyst.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C">
+  <!-- Open Graph -->
+  <meta name="description" content="在实际应用中，通常会遇到一些距离相关的问题，例如：
+
+离泥石流发生地最近的居民点？
+从国家体育场出发，2公里内最近的两家超市？
+某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？
+某条被污染的河流周围1000米内，有多少家食品加工厂？
+瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？
+
+以上的实际问题大部分与空间上地物的位置与距离相关，邻近分">
+<meta property="og:type" content="website">
+<meta property="og:title" content="邻近分析">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ProximityAnalyst.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="在实际应用中，通常会遇到一些距离相关的问题，例如：
+
+离泥石流发生地最近的居民点？
+从国家体育场出发，2公里内最近的两家超市？
+某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？
+某条被污染的河流周围1000米内，有多少家食品加工厂？
+瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？
+
+以上的实际问题大部分与空间上地物的位置与距离相关，邻近分">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/read.gif">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:updated_time" content="2016-04-19T06:41:27.639Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="邻近分析">
+<meta name="twitter:description" content="在实际应用中，通常会遇到一些距离相关的问题，例如：
+
+离泥石流发生地最近的居民点？
+从国家体育场出发，2公里内最近的两家超市？
+某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？
+某条被污染的河流周围1000米内，有多少家食品加工厂？
+瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？
+
+以上的实际问题大部分与空间上地物的位置与距离相关，邻近分">
+<meta name="twitter:image" content="http://qinlj.github.io/iDesktop-Cross/img/read.gif">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">News</a>
+      <a href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/ProximityAnalyst/ProximityAnalyst.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">邻近分析</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/docs/ProximityAnalyst/ProximityAnalyst.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>在实际应用中，通常会遇到一些距离相关的问题，例如：</p>
+<ul>
+<li>离泥石流发生地最近的居民点？</li>
+<li>从国家体育场出发，2公里内最近的两家超市？</li>
+<li>某地区的各个移动通信信号发射塔按强弱等级逐渐递减所覆盖的范围？</li>
+<li>某条被污染的河流周围1000米内，有多少家食品加工厂？</li>
+<li>瑞士国内所有足球比赛场馆和酒店分别表示在两个图层上，从任意一家酒店到最近的场馆的距离是多少？</li>
+</ul>
+<p>以上的实际问题大部分与空间上地物的位置与距离相关，邻近分析提供了用于确定多个或两个要素类间邻近性的功能，邻近分析功能包括缓冲区分析、泰森多边形、距离计算、距离查询、空间查询等功能，这些分析功能可用于解决此类问题。</p>
+<h3 id="内容提要：" class="article-heading"><a href="#内容提要：" class="headerlink" title="内容提要："></a><img src="img/read.gif" alt="">内容提要：<a class="article-anchor" href="#内容提要：" aria-hidden="true"></a></h3><p><img src="img/smalltitle.png" alt=""><br><a href="ThiessenPolygon_Theory.html">泰森多边形构建原理</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="ThiessenPolygon.html">构建泰森多边形</a></p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="ThiessenAnalyst_Example.html">泰森多边形应用实例</a></p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="DistanceMeasure_Theory.html">距离计算原理</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="DistanceMeasure.html">距离计算</a></p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="DistanceAnalyst_Example.html">距离计算应用实例</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="BufferTheory.html">缓冲区分析原理</a></p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="BufferAnalyst_Example.html">缓冲区分析应用实例</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="Proximity_Cases.html">邻近分析解决方案</a></p>
+<p>用户可使用应用程序的缓冲区分析功能对点、线、面数据生成缓冲区，包括单重缓冲区以及多重缓冲区。在应用程序中进行空间缓冲区分析，包括以下内容：</p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="../buffer/HowBufferWork.html">关于缓冲区分析</a></p>
+<p>介绍缓冲区分析的基本概念，并通过列表分别展示简单的点、线、面缓冲区的实例。</p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="../buffer/SingleBuffer.html">生成单重缓冲区</a></p>
+<p>介绍生成单重缓冲区的操作步骤。</p>
+<p><img src="img/smalltitle.png" alt=""><br><a href="../buffer/MutilBuffer.html">生成多重缓冲区</a></p>
+<p>介绍生成多重缓冲区的操作步骤。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2016-04-19T06:41:27.639Z" itemprop="dateModified">Last updated: 2016-04-19</time>
+                <a href="index.html" class="article-footer-next" title="产品介绍"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ProximityAnalyst.html';
+  var disqus_title = "邻近分析";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#内容提要："><span class="toc-text">内容提要：</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">产品介绍</a><strong class="sidebar-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="sidebar-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="sidebar-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="sidebar-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="sidebar-link">缓冲区应用实例</a><strong class="sidebar-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="sidebar-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="sidebar-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="sidebar-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="sidebar-link">单重缓冲区分析</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2016 <a href="https://zespia.tw/" target="_blank">iDesktop</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/hexojs" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">News</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">产品介绍</a><strong class="mobile-nav-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="mobile-nav-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="mobile-nav-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="mobile-nav-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="mobile-nav-link">缓冲区应用实例</a><strong class="mobile-nav-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="mobile-nav-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="mobile-nav-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="mobile-nav-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="mobile-nav-link">单重缓冲区分析</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/ProximityAnalyst/ProximityAnalyst.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

@@ -2,11 +2,11 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>SuperMap iDesktop Cross 8C</title>
+  <title>News | SuperMap iDesktop Cross 8C</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/index.html">
+  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/news/2014/07/index.html">
   <!-- Alternative links -->
   
   <!-- Icon -->
@@ -37,12 +37,12 @@
   <!-- Open Graph -->
   <meta name="description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SuperMap iDesktop Cross 8C">
-<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/index.html">
+<meta property="og:title" content="News">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/news/2014/07/index.html">
 <meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
 <meta property="og:description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SuperMap iDesktop Cross 8C">
+<meta name="twitter:title" content="News">
 <meta name="twitter:description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta name="twitter:site" content="hexojs">
 <meta property="fb:admins" content="100000247608790">
@@ -97,39 +97,46 @@
   </div>
 </header>
 
-    <header id="banner" class="wrapper">
-  <div class="inner">
-    <h2 id="banner-title"></h2>
-    <div id="banner-start">
-      <span id="banner-start-command">npm install hexo-cli -g</span><a id="banner-start-link" href="docs/"><i class="fa fa-arrow-right"></i></a>
-    </div>
-    <div id="banner-share"><!-- GitHub Star -->
-<iframe src="https://ghbtns.com/github-btn.html?user=hexojs&repo=hexo&type=star&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-<!-- GitHub fork -->
-<iframe src="https://ghbtns.com/github-btn.html?user=hexojs&repo=hexo&type=fork&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-<!-- Tweet button -->
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hexo.io/" data-text="Hexo - A fast, simple &amp; powerful blog framework powered by Node.js." data-hashtags="hexo,nodejs">Tweet</a>
-<!-- Twitter follow button -->
-<a href="https://twitter.com/hexojs" class="twitter-follow-button" data-show-count="false">Follow @hexojs</a>
-<script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script></div>
-  </div>
-</header>
+    
 <div id="content-wrap">
   <div class="wrapper">
     <div class="inner">
       
-      <ul id="intro-cmd-wrap">
-        <li class="intro-cmd-item">npm install hexo-cli -g</li>
-        <li class="intro-cmd-item">hexo init blog</li>
-        <li class="intro-cmd-item">cd blog</li>
-        <li class="intro-cmd-item">npm install</li>
-        <li class="intro-cmd-item">hexo server</li>
-      </ul>
-      <div id="intro-get-started-wrap">
-        <a href="docs/" id="intro-get-started-link">Get started</a>
-      </div>
+        
+          <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1>
+        <a href="/news/2014/07/13/hexo-2-8-released/" class="article-title" itemprop="name">Hexo 2.8 Released</a>
+      </h1>
+    
+    <a href="/news/2014/07/13/hexo-2-8-released/" class="article-date"><time datetime="2014-07-13T00:00:00.000Z">2014-07-13</time></a>
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <p>Hexo 2.8 was rewritten, brings you better performance and many improvements. The following is the highlights in this version. You can check <a href="https://github.com/hexojs/hexo/releases/tag/2.8.0" target="_blank" rel="external">detail</a> on GitHub.</p>
+<h2 id="Faster-Processing-Speed" class="article-heading"><a href="#Faster-Processing-Speed" class="headerlink" title="Faster Processing Speed"></a>Faster Processing Speed<a class="article-anchor" href="#Faster-Processing-Speed" aria-hidden="true"></a></h2><p>Before Hexo 2.8, all source files have to be processed each time you use Hexo. In Hexo 2.8, the entire database will be saved to <code>db.json</code> so Hexo don’t have to process all files again. Also, a new data type “<strong>skip</strong>“ was added for processors to detect whether a file was changed or not.</p>
+<p>Generating was also changed in Hexo 2.8. You can check the elapsed time of each file in console now. However, I found multi-process generating didn’t affect generating speed a lot. Thus, <code>multi_thread</code> and <code>max_open_file</code> setting are deprecated in Hexo 2.8.</p>
+<img src="/news/2014/07/13/hexo-2-8-released/generate-console.png" alt="generate-console.png" title="">
+<h2 id="Draft-Publish" class="article-heading"><a href="#Draft-Publish" class="headerlink" title="Draft Publish"></a>Draft Publish<a class="article-anchor" href="#Draft-Publish" aria-hidden="true"></a></h2><p>You don’t have to enter full file name to publish a post anymore. Draft publish system is rewritten in Hexo 2.8. <code>new_post_name</code> setting will be applied until drafts are published. Besides, you can choose which layout to apply when publishing.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<p>A new API <code>post.publish</code> was added to help you publish drafts more easily.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hexo.post.publish(&#123;slug: <span class="string">'hello-world'</span>, layout: <span class="string">'post'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, target</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Permalink" class="article-heading"><a href="#Permalink" class="headerlink" title="Permalink"></a>Permalink<a class="article-anchor" href="#Permalink" aria-hidden="true"></a></h2><p>File name and permalink now share a more universal variable system. Every variables in file name can also be read in permalink. Here’s a config for example:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> :type/:title/</span><br><span class="line"><span class="attr">new_post_name:</span> :type/:title.md</span><br></pre></td></tr></table></figure>
+<p>When you create a post, the post will be saved to <code>source/_posts/test/Hello-World.md</code> and the URL will be <code>http://localhost:4000/test/Hello-World/</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello World"</span> --type <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="Multi-language-Support" class="article-heading"><a href="#Multi-language-Support" class="headerlink" title="Multi-language Support"></a>Multi-language Support<a class="article-anchor" href="#Multi-language-Support" aria-hidden="true"></a></h2><p>With the new permalink introduced in the previous section, it’s much easier to create a multi-language site. For example:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> :lang/:title/</span><br><span class="line"><span class="attr">new_post_name:</span> :lang/:title.md</span><br></pre></td></tr></table></figure>
+<p>Then you can create a post with <code>--lang</code> option:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello World"</span> --lang en</span><br><span class="line"><span class="comment"># =&gt; This post will be saved to source/_posts/en/Hello-World.md</span></span><br><span class="line"><span class="comment"># =&gt; URL: http://localhost:4000/en/Hello-World/</span></span><br><span class="line"></span><br><span class="line">$ hexo new <span class="string">"你好世界"</span> --lang tw</span><br><span class="line"><span class="comment"># =&gt; This post will be saved to source/_posts/tw/你好世界.md</span></span><br><span class="line"><span class="comment"># =&gt; URL: http://localhost:4000/tw/你好世界/</span></span><br></pre></td></tr></table></figure>
+<p>You can define the default value of permalink variables in <code>permalink_defaults</code> setting. For example, we define the defualt language as English.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">  lang:</span> en</span><br></pre></td></tr></table></figure>
+  </div>
+  
+</article>
+
+        
+      
     </div>
   </div>
 </div>

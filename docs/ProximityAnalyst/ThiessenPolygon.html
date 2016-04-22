@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>泰森多边形 | SuperMap iDesktop Cross 8C</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ThiessenPolygon.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ThiessenPolygon.html">
+    
+      <link rel="alternative" hreflang="zh-tw" href="http://qinlj.github.io/iDesktop-Cross/zh-tw/docs/ProximityAnalyst/ThiessenPolygon.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://qinlj.github.io/iDesktop-Cross/zh-cn/docs/ProximityAnalyst/ThiessenPolygon.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C">
+  <!-- Open Graph -->
+  <meta name="description" content="使用说明泰森多边形可用于定性分析、统计分析、邻近分析等。例如，可以用离散点的性质来描述泰森多边形区域的性质；可用离散点的数据来计算泰森多边形区域的数据；判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是n 边形，则就与 n个离散点相邻；当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。
+操作步骤
+在“分析”选项卡上的“矢量分析”组中，单击“邻近">
+<meta property="og:type" content="website">
+<meta property="og:title" content="泰森多边形">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ThiessenPolygon.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="使用说明泰森多边形可用于定性分析、统计分析、邻近分析等。例如，可以用离散点的性质来描述泰森多边形区域的性质；可用离散点的数据来计算泰森多边形区域的数据；判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是n 边形，则就与 n个离散点相邻；当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。
+操作步骤
+在“分析”选项卡上的“矢量分析”组中，单击“邻近">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/read.gif">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/read.gif">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/note.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/seealso.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:updated_time" content="2016-04-19T06:41:27.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="泰森多边形">
+<meta name="twitter:description" content="使用说明泰森多边形可用于定性分析、统计分析、邻近分析等。例如，可以用离散点的性质来描述泰森多边形区域的性质；可用离散点的数据来计算泰森多边形区域的数据；判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是n 边形，则就与 n个离散点相邻；当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。
+操作步骤
+在“分析”选项卡上的“矢量分析”组中，单击“邻近">
+<meta name="twitter:image" content="http://qinlj.github.io/iDesktop-Cross/img/read.gif">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">News</a>
+      <a href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/ProximityAnalyst/ThiessenPolygon.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">泰森多边形</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/docs/ProximityAnalyst/ThiessenPolygon.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="使用说明" class="article-heading"><a href="#使用说明" class="headerlink" title="使用说明"></a><img src="img/read.gif" alt="">使用说明<a class="article-anchor" href="#使用说明" aria-hidden="true"></a></h3><p>泰森多边形可用于定性分析、统计分析、邻近分析等。例如，可以用离散点的性质来描述泰森多边形区域的性质；可用离散点的数据来计算泰森多边形区域的数据；判断一个离散点与其它哪些离散点相邻时，可根据泰森多边形直接得出，且若泰森多边形是<br>n 边形，则就与 n<br>个离散点相邻；当某一数据点落入某一泰森多边形中时，它与相应的离散点最邻近，无需计算距离。</p>
+<h3 id="操作步骤" class="article-heading"><a href="#操作步骤" class="headerlink" title="操作步骤"></a><img src="img/read.gif" alt="">操作步骤<a class="article-anchor" href="#操作步骤" aria-hidden="true"></a></h3><ol>
+<li>在“<strong>分析</strong>”选项卡上的“<strong>矢量分析</strong>”组中，单击“<strong>邻近分析</strong>”按钮，在弹出的下拉菜单中选择”泰森多边形”项，弹出“构建泰森多边形”对话框。</li>
+<li>设置用于构建泰森多边形的点数据：</li>
+<li><p>设置结果数据的范围，若不勾选“自定义区域”复选框，则构建的泰森多边形范围默认比点数据集范围要大；若勾选该复选框，则用户可通过选择面或绘制面方式，自定义泰森多边形范围。</p>
+<ul>
+<li><strong>选择面</strong>：若当前地图窗口中有可见的面图层，则可单击“自定义区域”右侧下拉按钮，选择“选择面”项，在地图窗口中选择一个面对象作为泰森多边形范围。</li>
+<li><strong>绘制面</strong>：单击“自定义区域”右侧下拉按钮，选择“绘制面”项，在地图窗口中绘制一个面对象作为泰森多边形范围。</li>
+</ul>
+</li>
+<li><p>设置结果数据集保存名称和保存在的数据源：</p>
+<ul>
+<li><strong>数据源：</strong>选择构建的泰森多边形数据要保存的数据源。</li>
+<li><strong>数据集：</strong>输入构建的泰森多边形保存的数据集名称。如果输入的数据集名称已经存在，则会提示数据集名称非法，需要重新输入。</li>
+</ul>
+</li>
+<li><p>设置结果数据的展示方式：</p>
+<ul>
+<li><strong>在地图中展示</strong>：勾选“在地图中展示”复选框后，若当前窗口为地图窗口，则构建的泰森多边形会自动添加到当前地图窗口中；若当前窗口不是地图窗口，则构建的泰森多边形会自动添加到新建的地图窗口中。</li>
+<li><strong>在场景中展示</strong>：勾选“在场景中展示”复选框后，若当前窗口为场景窗口，则构建的泰森多边形会自动添加到当前场景窗口中；若当前窗口不是场景窗口，则构建的泰森多边形会自动添加到新建的场景窗口中。</li>
+</ul>
+</li>
+<li><p>设置好以上参数后，点击“确定”按钮，即可执行构建泰森多边形的操作。</p>
+</li>
+</ol>
+<h3 id="注意事项" class="article-heading"><a href="#注意事项" class="headerlink" title=" 注意事项"></a><img src="img/note.png" alt=""> 注意事项<a class="article-anchor" href="#注意事项" aria-hidden="true"></a></h3><ol>
+<li>生成的泰森多边形数据集坐标系与源数据集坐标系一致，若勾选了“在场景中展示”，则平面坐标系的结果数据集会在平面场景中展示，地理坐标系和投影坐标系的结果数据会在球面场景中展示。</li>
+<li>若用户未自定义泰森多边形的构建范围，则默认范围比点数据集范围要大，即增大范围为点数据集边长最长边的10%，例如点数据集的范围为150*100，则构建的泰森多边形数据集范围为165*115。</li>
+</ol>
+<h3 id="相关主题" class="article-heading"><a href="#相关主题" class="headerlink" title=" 相关主题"></a><img src="img/seealso.png" alt=""> 相关主题<a class="article-anchor" href="#相关主题" aria-hidden="true"></a></h3><p><img src="img/smalltitle.png" alt=""> <a href="ThiessenPolygon_Theory.html">泰森多边形构建原理</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="ThiessenAnalyst_Example.html">泰森多边形应用实例</a></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2016-04-19T06:41:27.641Z" itemprop="dateModified">Last updated: 2016-04-19</time>
+                <a href="index.html" class="article-footer-next" title="产品介绍"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'http://qinlj.github.io/iDesktop-Cross/docs/ProximityAnalyst/ThiessenPolygon.html';
+  var disqus_title = "泰森多边形";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用说明"><span class="toc-text">使用说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤"><span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-text"> 注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关主题"><span class="toc-text"> 相关主题</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">产品介绍</a><strong class="sidebar-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="sidebar-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="sidebar-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="sidebar-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="sidebar-link">缓冲区应用实例</a><strong class="sidebar-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="sidebar-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="sidebar-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="sidebar-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="sidebar-link">单重缓冲区分析</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2016 <a href="https://zespia.tw/" target="_blank">iDesktop</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/hexojs" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">News</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">产品介绍</a><strong class="mobile-nav-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="mobile-nav-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="mobile-nav-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="mobile-nav-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="mobile-nav-link">缓冲区应用实例</a><strong class="mobile-nav-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="mobile-nav-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="mobile-nav-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="mobile-nav-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="mobile-nav-link">单重缓冲区分析</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/ProximityAnalyst/ThiessenPolygon.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

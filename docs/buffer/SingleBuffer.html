@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>生成单重缓冲区 | SuperMap iDesktop Cross 8C</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/docs/buffer/SingleBuffer.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://qinlj.github.io/iDesktop-Cross/docs/buffer/SingleBuffer.html">
+    
+      <link rel="alternative" hreflang="zh-tw" href="http://qinlj.github.io/iDesktop-Cross/zh-tw/docs/buffer/SingleBuffer.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://qinlj.github.io/iDesktop-Cross/zh-cn/docs/buffer/SingleBuffer.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="SuperMap iDesktop Cross 8C">
+  <!-- Open Graph -->
+  <meta name="description" content="使用说明单重缓冲区是指在点、线、面实体周围自动建立的一定宽度的多边形。生成的缓冲区结果可以继续参与后面的分析操作。
+
+目前，只支持对点、线、面数据集生成缓冲区，不支持对 CAD 数据集、网络数据集和路由数据集生成缓冲区。
+由于数据类型的不同，在生成缓冲区时的参数设置也完全不相同。对线数据生成缓冲区，可以选择圆头缓冲或平头缓冲两种缓冲类型；而对点/面数据只能生成圆头缓冲。在缓冲类型为平头缓冲时，可以">
+<meta property="og:type" content="website">
+<meta property="og:title" content="生成单重缓冲区">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/docs/buffer/SingleBuffer.html">
+<meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
+<meta property="og:description" content="使用说明单重缓冲区是指在点、线、面实体周围自动建立的一定宽度的多边形。生成的缓冲区结果可以继续参与后面的分析操作。
+
+目前，只支持对点、线、面数据集生成缓冲区，不支持对 CAD 数据集、网络数据集和路由数据集生成缓冲区。
+由于数据类型的不同，在生成缓冲区时的参数设置也完全不相同。对线数据生成缓冲区，可以选择圆头缓冲或平头缓冲两种缓冲类型；而对点/面数据只能生成圆头缓冲。在缓冲类型为平头缓冲时，可以">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/BufferDia.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/SigBuf1.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/SigBuf2.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:image" content="http://qinlj.github.io/iDesktop-Cross/img/smalltitle.png">
+<meta property="og:updated_time" content="2016-04-19T06:36:37.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生成单重缓冲区">
+<meta name="twitter:description" content="使用说明单重缓冲区是指在点、线、面实体周围自动建立的一定宽度的多边形。生成的缓冲区结果可以继续参与后面的分析操作。
+
+目前，只支持对点、线、面数据集生成缓冲区，不支持对 CAD 数据集、网络数据集和路由数据集生成缓冲区。
+由于数据类型的不同，在生成缓冲区时的参数设置也完全不相同。对线数据生成缓冲区，可以选择圆头缓冲或平头缓冲两种缓冲类型；而对点/面数据只能生成圆头缓冲。在缓冲类型为平头缓冲时，可以">
+<meta name="twitter:image" content="http://qinlj.github.io/iDesktop-Cross/img/BufferDia.png">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">News</a>
+      <a href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/buffer/SingleBuffer.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">生成单重缓冲区</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/docs/buffer/SingleBuffer.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="使用说明" class="article-heading"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明<a class="article-anchor" href="#使用说明" aria-hidden="true"></a></h3><p>单重缓冲区是指在点、线、面实体周围自动建立的一定宽度的多边形。生成的缓冲区结果可以继续参与后面的分析操作。</p>
+<ul>
+<li>目前，只支持对点、线、面数据集生成缓冲区，不支持对 CAD 数据集、网络数据集和路由数据集生成缓冲区。</li>
+<li>由于数据类型的不同，在生成缓冲区时的参数设置也完全不相同。对线数据生成缓冲区，可以选择圆头缓冲或平头缓冲两种缓冲类型；而对点/面数据只能生成圆头缓冲。在缓冲类型为平头缓冲时，可以对线数据集生成左右半径不等或者只有左缓冲或者右缓冲的缓冲区。</li>
+<li>通过“数值型”方式指定缓冲区距离时，面数据集允许使用负值，点、线数据集只能为正值。但是点、线、面数据集都不允许缓冲距离为0。</li>
+<li>通过“字段型”方式指定缓冲区距离时，如果对象指定的字段值为空或者0时，不会对该对象生成缓冲区；当指定的字段为负值时，点、线数据集按照正值处理；对线数据生成平头缓冲时，如果线数据左（右）半径字段为负值，则按该数值的绝对值作为右（左）半径进行处理。</li>
+</ul>
+<h3 id="操作步骤" class="article-heading"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤<a class="article-anchor" href="#操作步骤" aria-hidden="true"></a></h3><p>在“<strong>分析</strong>”选项卡上的“<strong>矢量分析</strong>”组中，单击“<strong>缓冲区</strong>”按钮，在弹出的下拉菜单中选择”缓冲区”项，弹出“生成缓冲区”对话框。</p>
+<p>  <img src="img/BufferDia.png" alt=""><br>  图：“生成缓冲区”对话框</p>
+<p>选择需要生成缓冲区的数据的类型。</p>
+<p>可以对点/面数据集或者线数据集生成缓冲区。对线数据生成缓冲区时需要设置缓冲类型，可以是圆头缓冲或者平头缓冲，而对点/面数据生成缓冲区时则不需要。所以，在对线数据生成缓冲区时，“生成缓冲区”对话框中会多出一些选项。下面以对线数据生成缓冲区为例，对“生成缓冲区”对话框中的参数予以说明。</p>
+<p>设置缓冲数据。</p>
+<p><strong>数据源：</strong>选择要生成缓冲区的数据集所在的数据源。</p>
+<p><strong>数据集：</strong>选择要生成缓冲区的数据集。</p>
+<p>系统根据生成缓冲区的数据类型，自动过滤选中的数据源下的数据集，只显示该数据源下的线数据集。如果是对点/面数据生成缓冲区，则只会显示相应的数据源下面的点或者面数据集。</p>
+<p><strong>只针对被选中对象进行缓冲操作：</strong>在选中某一数据集中的对象情况下，“只针对被选中对象进行缓冲操作”前面的复选框可用。勾选该项，表示只对选中的对象生成缓冲区，同时不能设置数据源和数据集；取消勾选该项，表示对该数据集下的所有对象进行生成缓冲区的操作，可以更改生成缓冲区的数据源和数据集。</p>
+<p>设置缓冲类型。缓冲类型的不同，需要设置的参数也不大相同。</p>
+<p><strong>圆头缓冲：</strong>在线的两边按照缓冲距离绘制平行线，并在线的端点处以缓冲距离为半径绘制半圆，连接生成缓冲区域。默认缓冲类型为圆头缓冲。</p>
+<p><strong>平头缓冲：</strong>生成缓冲区时，以线数据的相邻节点间的线段为一个矩形边，以左半径或者右半径为矩形的另外一边，生成形状为矩形的缓冲区域。</p>
+<p>线数据在生成平头缓冲的时候，可以生成左右缓冲距离不等的缓冲区，或者生成单边的缓冲区。</p>
+<ul>
+<li><strong>左缓冲：</strong>对线数据的左边区域生成缓冲区。</li>
+<li><strong>右缓冲：</strong>对线数据的右边区域生成缓冲区。</li>
+</ul>
+<p>只有同时勾选“左缓冲”和“右缓冲”两项，才会对线数据生成两边缓冲区。默认为同时生成左缓冲和右缓冲。</p>
+<p>设置缓冲单位。</p>
+<p>缓冲距离的单位，可以为毫米、厘米、分米、米、千米、英寸、英尺、英里、度、码等。</p>
+<p>选择缓冲距离的指定方式。</p>
+<ul>
+<li><strong>数值型：</strong></li>
+<li><strong>字段型：</strong>勾选“字段型”，表示通过数值型字段或者表达式设置缓冲距离大小。</li>
+</ul>
+<p>设置结果选项。需要对生成缓冲区后是否合并、是否保留原对象字段属性、是否添加到当前地图窗口以及半圆弧线段数值大小等项进行设置。</p>
+<p><strong>合并缓冲区：</strong>勾选该项，表示对多个对象的缓冲区进行合并运算。取消勾选该项，表示保留生成的缓冲区结果，不进行合并操作。如下图所示，对两个圆（蓝色）生成多缓冲区。生成的缓冲区结果如图1所示，将生成的结果移动，发现两个缓冲区合并为一个复杂对象，图2为合并后的缓冲区。注意：在不勾选合并缓冲区的情况下，不同对象的缓冲区不会进行合并，为单独的两个简单对象。</p>
+<p><img src="img/SigBuf1.png" alt=""></p>
+<p>图1：单重缓冲区结果</p>
+<p><img src="img/SigBuf2.png" alt=""></p>
+<p>图2：合并后的缓冲区</p>
+<p><strong>保留原对象字段属性：</strong>勾选该项，表示生成的每一个缓冲区会保留相应的原对象的非系统属性字段信息。取消勾选该项将会丢失原对象的非系统字段属性信息。默认为勾选该项。注意：当勾选“合并缓冲区”时，该项不可用。</p>
+<p><strong>在地图窗口中显示结果：</strong>勾选该项，表示在生成缓冲区后，会将其生成的结果添加到当前地图窗口中。取消勾选该项，则不会自动将结果添加到当前地图窗口中。默认为勾选该项。</p>
+<p><strong>半圆弧线段数(4-200)：</strong>用于设置生成的缓冲区边界的平滑度。数值越大，圆弧/弧段均分数目越多，缓冲区边界越平滑。取值范围为4-200。默认的数值大小为100。</p>
+<p>设置结果数据。</p>
+<p><strong>数据源：</strong>选择生成的缓冲区结果要保存的数据源。</p>
+<p><strong>数据集：</strong>输入生成的缓冲区结果要保存的数据集名称。如果输入的数据集名称已经存在，则会提示数据集名称非法，需要重新输入。</p>
+<p>设置好以上参数后，点击“确定”按钮，执行生成缓冲区的操作。</p>
+<h3 id="备注" class="article-heading"><a href="#备注" class="headerlink" title="备注"></a>备注<a class="article-anchor" href="#备注" aria-hidden="true"></a></h3><p>关于缓冲半径的说明：缓冲半径有两种设置方式，数值型和字段型。</p>
+<ul>
+<li><strong>数值型</strong><ul>
+<li>点、线数据不支持负半径，面数据支持负半径。</li>
+</ul>
+</li>
+<li><strong>字段型</strong><ul>
+<li>此种方式只对数据集和记录集进行缓冲分析时有效，且需指定除系统字段之外的合法字段。</li>
+<li>对于点和线数据集，当缓冲半径字段中包含了负值，则取其绝对值生成缓冲区。</li>
+<li>缓冲半径为字段或字段表达式时：对于面数据，若合并缓冲区，则取其绝对值，若不合并，则按照负半径处理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="相关主题" class="article-heading"><a href="#相关主题" class="headerlink" title="相关主题"></a>相关主题<a class="article-anchor" href="#相关主题" aria-hidden="true"></a></h3><p><img src="img/smalltitle.png" alt=""> <a href="buffer/HowBufferWork.html">关于缓冲区分析</a></p>
+<p><img src="img/smalltitle.png" alt=""> <a href="buffer/MutilBuffer.html">生成多重缓冲区</a></p>
+<hr>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2016-04-19T06:36:37.894Z" itemprop="dateModified">Last updated: 2016-04-19</time>
+                <a href="index.html" class="article-footer-next" title="产品介绍"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'http://qinlj.github.io/iDesktop-Cross/docs/buffer/SingleBuffer.html';
+  var disqus_title = "生成单重缓冲区";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用说明"><span class="toc-text">使用说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤"><span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备注"><span class="toc-text">备注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关主题"><span class="toc-text">相关主题</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">产品介绍</a><strong class="sidebar-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="sidebar-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="sidebar-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="sidebar-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="sidebar-link">缓冲区应用实例</a><strong class="sidebar-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="sidebar-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="sidebar-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="sidebar-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="sidebar-link">单重缓冲区分析</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2016 <a href="https://zespia.tw/" target="_blank">iDesktop</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/hexojs" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">News</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">产品介绍</a><strong class="mobile-nav-title">邻近分析</strong><a href="ProximityAnalyst/ProximityAnalyst.html" class="mobile-nav-link">邻近分析概述</a><a href="ProximityAnalyst/Proximity_Cases.html" class="mobile-nav-link">邻近分析解决方案</a><a href="ProximityAnalyst/BufferTheory.html" class="mobile-nav-link">缓冲区分析原理</a><a href="ProximityAnalyst/BufferAnalyst_Example.html" class="mobile-nav-link">缓冲区应用实例</a><strong class="mobile-nav-title">Bufferanalyst</strong><a href="buffer/Buffer3D.html" class="mobile-nav-link">三维缓冲区分析</a><a href="buffer/HowBufferWork.html" class="mobile-nav-link">缓冲区分析概述</a><a href="buffer/MutilBuffer.html" class="mobile-nav-link">多重缓冲区分析</a><a href="buffer/SingleBuffer.html" class="mobile-nav-link">单重缓冲区分析</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/buffer/SingleBuffer.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

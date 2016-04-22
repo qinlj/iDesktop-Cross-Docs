@@ -2,11 +2,11 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>SuperMap iDesktop Cross 8C</title>
+  <title>News | SuperMap iDesktop Cross 8C</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/index.html">
+  <link rel="canonical" href="http://qinlj.github.io/iDesktop-Cross/news/2014/06/index.html">
   <!-- Alternative links -->
   
   <!-- Icon -->
@@ -37,12 +37,12 @@
   <!-- Open Graph -->
   <meta name="description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SuperMap iDesktop Cross 8C">
-<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/index.html">
+<meta property="og:title" content="News">
+<meta property="og:url" content="http://qinlj.github.io/iDesktop-Cross/news/2014/06/index.html">
 <meta property="og:site_name" content="SuperMap iDesktop Cross 8C">
 <meta property="og:description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SuperMap iDesktop Cross 8C">
+<meta name="twitter:title" content="News">
 <meta name="twitter:description" content="SuperMap iDesktop Cross 8C是一款支持跨平台的桌面GIS应用与开发平台，是超图新一代的开源GIS桌面产品。">
 <meta name="twitter:site" content="hexojs">
 <meta property="fb:admins" content="100000247608790">
@@ -97,39 +97,48 @@
   </div>
 </header>
 
-    <header id="banner" class="wrapper">
-  <div class="inner">
-    <h2 id="banner-title"></h2>
-    <div id="banner-start">
-      <span id="banner-start-command">npm install hexo-cli -g</span><a id="banner-start-link" href="docs/"><i class="fa fa-arrow-right"></i></a>
-    </div>
-    <div id="banner-share"><!-- GitHub Star -->
-<iframe src="https://ghbtns.com/github-btn.html?user=hexojs&repo=hexo&type=star&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-<!-- GitHub fork -->
-<iframe src="https://ghbtns.com/github-btn.html?user=hexojs&repo=hexo&type=fork&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-<!-- Tweet button -->
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://hexo.io/" data-text="Hexo - A fast, simple &amp; powerful blog framework powered by Node.js." data-hashtags="hexo,nodejs">Tweet</a>
-<!-- Twitter follow button -->
-<a href="https://twitter.com/hexojs" class="twitter-follow-button" data-show-count="false">Follow @hexojs</a>
-<script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script></div>
-  </div>
-</header>
+    
 <div id="content-wrap">
   <div class="wrapper">
     <div class="inner">
       
-      <ul id="intro-cmd-wrap">
-        <li class="intro-cmd-item">npm install hexo-cli -g</li>
-        <li class="intro-cmd-item">hexo init blog</li>
-        <li class="intro-cmd-item">cd blog</li>
-        <li class="intro-cmd-item">npm install</li>
-        <li class="intro-cmd-item">hexo server</li>
-      </ul>
-      <div id="intro-get-started-wrap">
-        <a href="docs/" id="intro-get-started-link">Get started</a>
-      </div>
+        
+          <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1>
+        <a href="/news/2014/06/14/hexo-2-7-released/" class="article-title" itemprop="name">Hexo 2.7 Released</a>
+      </h1>
+    
+    <a href="/news/2014/06/14/hexo-2-7-released/" class="article-date"><time datetime="2014-06-14T00:00:00.000Z">2014-06-14</time></a>
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <p>Hexo 2.7 has been released with three new features. I’m going to introduce them below.</p>
+<h2 id="Fragment-Caching" class="article-heading"><a href="#Fragment-Caching" class="headerlink" title="Fragment Caching"></a>Fragment Caching<a class="article-anchor" href="#Fragment-Caching" aria-hidden="true"></a></h2><p>Although Hexo is fast, it may become slow if you have thousands of source files or complicated categories or tags. Before the data model upgraded, I borrowed a feature from Ruby on Rails: <strong>Fragment Caching</strong>.</p>
+<p>Fragment Caching saves contents within a fragment and serves the cache when the next request come in. A fragment will only be processed once. It can reduce database queries and decrease generation time significantly. For instance, a Hexo site with 300+ source files needs 6 minutes to generate. In Hexo 2.7, it only need 10 seconds!</p>
+<p>It can be used in header, footer, sidebar or static contents that won’t be changed during generating. For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;%- fragment_cache(<span class="string">'header'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'&lt;header&gt;&lt;/header&gt;'</span>;</span><br><span class="line">&#125;); %&gt;</span><br></pre></td></tr></table></figure>
+<p>By using <code>fragment_cache</code> helper, contents in the function will be cached.</p>
+<p>Partial helper also supports Fragment Caching, you only need to add a <code>{cache: true}</code> option when using partial.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;%- partial(<span class="string">'header'</span>, &#123;&#125;, &#123;cache: <span class="literal">true</span>&#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/hexojs/hexo-theme-landscape" target="_blank" rel="external">Landscape</a> is updated and supports Fragment Caching now. You can check <a href="https://github.com/hexojs/hexo-theme-landscape/commit/d2aedda61571d6994eb72d784ceda2f59d2a8631" target="_blank" rel="external">this commit</a> to see what’s changed.</p>
+<h2 id="Relative-Link" class="article-heading"><a href="#Relative-Link" class="headerlink" title="Relative Link"></a>Relative Link<a class="article-anchor" href="#Relative-Link" aria-hidden="true"></a></h2><p>Relative Link is supported since Hexo 2.7. But your theme needs some modifications to support it. However, it’s not as hard as you think. You just need to replace the following contents in templates</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;%- config.root %&gt;&lt;%- path %&gt;</span><br></pre></td></tr></table></figure>
+<p>with <code>url_for</code> helper.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;%- url_for(path) %&gt;</span><br></pre></td></tr></table></figure>
+<p><code>url_for</code> helper will add <code>config.root</code> automatically for you. If you enable <code>relative_link</code> setting, it’ll add a relative path.</p>
+<p><a href="https://github.com/hexojs/hexo-theme-landscape" target="_blank" rel="external">Landscape</a> is updated for Relative Link. You can check <a href="https://github.com/hexojs/hexo-theme-landscape/commit/d29cbb83356373af27e7b98643f29a27804364af" target="_blank" rel="external">this commit</a> to see what’s changed.</p>
+<h2 id="Server-Middleware" class="article-heading"><a href="#Server-Middleware" class="headerlink" title="Server Middleware"></a>Server Middleware<a class="article-anchor" href="#Server-Middleware" aria-hidden="true"></a></h2><p>Server Middleware would be familiar if you have ever used <a href="http://www.senchalabs.org/connect/" target="_blank" rel="external">Connect</a> or <a href="http://expressjs.com/" target="_blank" rel="external">Express</a> before. <a href="http://www.senchalabs.org/connect/" target="_blank" rel="external">Connect</a> passes a request through functions called <strong>middleware</strong>. You can make response to the coming in request in middleware.</p>
+<p>In Hexo, middleware is served as a type of filter. You can add middleware by registering a new filter. For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hexo.extend.filter.register(<span class="string">'server_middleware'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">app</span>)</span>&#123;</span><br><span class="line">  app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line">    res.setHeader(<span class="string">'X-Powered-By'</span>, <span class="string">'Hexo'</span>);</span><br><span class="line">    next();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>This middleware add a header <code>X-Powered-By</code> and passes the request to the next middleware.</p>
+
+  </div>
+  
+</article>
+
+        
+      
     </div>
   </div>
 </div>

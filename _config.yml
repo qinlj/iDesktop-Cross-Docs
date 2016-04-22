@@ -19,7 +19,7 @@ per_page: 0
 theme: navy
 deploy:
   type: git
-  repo: git@github.com:qinlj/iDesktop-Cross.git
+  repo: git@github.com:qinlj/iDesktop-Cross-Docs.git
   branch: gh-pages
 
 disqus_shortname: hexojs
@@ -35,5 +35,6 @@ algolia:
   zh-cn:
     api_key: cdea7d4e47d84f6145b77e7f68689f35
     index_name: hexo_zh-cn
-twitter: hexojs
-github: hexojs/hexo
+twitter: qinlj
+github: qinlj/iDesktop-Cross-Docs
+

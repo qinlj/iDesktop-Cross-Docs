@@ -1,0 +1,35 @@
+docs:
+  getting_started:
+    SuperMap Cross: index.html
+  Proximity:
+    ProximityAnalyst: ProximityAnalyst/ProximityAnalyst.html
+    Proximity_Cases: ProximityAnalyst/Proximity_Cases.html
+    BufferTheory: ProximityAnalyst/BufferTheory.html
+    BufferAnalyst_Example: ProximityAnalyst/BufferAnalyst_Example.html
+  Bufferanalyst: 
+    Buffer3D: buffer/Buffer3D.html
+    HowBufferWork: buffer/HowBufferWork.html
+    MutilBuffer: buffer/MutilBuffer.html
+    SingleBuffer: buffer/SingleBuffer.html
+
+api:
+  core:
+    overview: index.html
+    events: events.html
+    locals: locals.html
+    router: router.html
+    box: box.html
+    rendering: rendering.html
+    posts: posts.html
+    scaffolds: scaffolds.html
+    themes: themes.html
+  extensions:
+    console: console.html
+    deployer: deployer.html
+    filter: filter.html
+    generator: generator.html
+    helper: helper.html
+    migrator: migrator.html
+    processor: processor.html
+    renderer: renderer.html
+    tag: tag.html

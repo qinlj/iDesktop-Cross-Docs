@@ -1,9 +1,9 @@
 menu:
   docs: 文档
   api: API
-  news: 新闻
-  plugins: 插件
-  themes: 主题
+  news: 新特性
+#  plugins: 插件
+#  themes: 主题
   search: 搜索
 
 index:
@@ -19,33 +19,18 @@ page:
 
 sidebar:
   docs:
-    getting_started: 开始使用
-    overview: 概述
-    setup: 建站
-    configuration: 配置
-    commands: 命令
-    migration: 迁移
-    basic_usage: 基本操作
-    writing: 写作
-    front_matter: Front-matter
-    tag_plugins: 标签插件
-    asset_folders: 资源文件夹
-    data_files: 数据文件夹
-    server: 服务器
-    generating: 生成器
-    deployment: 部署
-    customization: 自定义
-    permalinks: 永久链接
-    themes: 主题
-    structure: 结构
-    templates: 模版
-    variables: 变量
-    helpers: 辅助函数
-    internationalization: 国际化 (i18n)
-    plugins: 插件
-    miscellaneous: 其他
-    troubleshooting: 问题解答
-    contributing: 贡献
+    getting_started: Getting Started
+    SuperMap Cross: 产品介绍
+    Proximity: 邻近分析
+    ProximityAnalyst: 邻近分析概述
+    Proximity_Cases: 邻近分析解决方案
+    BufferTheory: 缓冲区分析原理
+    BufferAnalyst_Example: 缓冲区应用实例
+    Bufferanalyst: Bufferanalyst
+    Buffer3D: 三维缓冲区分析
+    HowBufferWork: 缓冲区分析概述
+    MutilBuffer: 多重缓冲区分析
+    SingleBuffer: 单重缓冲区分析
   api:
     core: 核心
     overview: 概述

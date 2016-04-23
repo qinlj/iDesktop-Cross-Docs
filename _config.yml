@@ -22,7 +22,7 @@ deploy:
   repo: git@github.com:qinlj/iDesktop-Cross-Docs.git
   branch: gh-pages
 
-disqus_shortname: hexojs
+duoshuo_shortname: qinlj
 google_analytics: UA-4910098-10
 fb_admins: 100000247608790
 algolia:

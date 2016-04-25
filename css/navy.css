@@ -348,7 +348,6 @@ body {
   padding: 15px 20px;
 }
 #banner-start-command:before {
-  content: "$";
   opacity: 0.5;
   padding-right: 10px;
 }
@@ -459,14 +458,14 @@ body {
     margin: 50px auto 0;
   }
 }
-.intro-cmd-item {
+.intro-item {
   font-size: 16px;
   font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
   line-height: 2;
   padding: 0 30px;
 }
-.intro-cmd-item:before {
-  content: "$";
+.intro-item:before {
+  content: "*";
   color: #0e83cd;
   padding-right: 15px;
 }
